@@ -585,50 +585,6 @@ body, a, button { cursor: none; }
 @media (max-width: 960px) {
   body { font-size: 16px; line-height: 1.55; }
 
-  /* Site chrome: readable bar + always reach primary nav (scroll row, not “blog with no menu”) */
-  .nav {
-    flex-wrap: wrap;
-    align-items: center;
-    row-gap: 6px;
-    padding: 12px 16px 10px;
-    mix-blend-mode: normal;
-    color: var(--ink);
-    background: rgba(217, 219, 227, 0.94);
-    backdrop-filter: saturate(1.2) blur(12px);
-    -webkit-backdrop-filter: saturate(1.2) blur(12px);
-    border-bottom: 1px solid var(--rule);
-  }
-  .nav .brand { font-size: 22px; }
-  .nav-inner {
-    flex-wrap: wrap;
-    row-gap: 6px;
-    width: 100%;
-  }
-  .nav-links {
-    display: flex;
-    flex: 1 1 100%;
-    order: 3;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    gap: 20px;
-    padding: 6px 0 4px;
-    margin: 2px -16px 0;
-    padding-left: 16px;
-    padding-right: 16px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    mask-image: linear-gradient(to right, transparent, #000 10px, #000 calc(100% - 10px), transparent);
-  }
-  .nav-links::-webkit-scrollbar { display: none; width: 0; height: 0; }
-  .nav-links a {
-    flex: 0 0 auto;
-    white-space: nowrap;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    padding: 8px 0;
-  }
 
   .hero { grid-template-columns: 1fr; }
   .hero-media { min-height: 52vh; }
@@ -719,14 +675,6 @@ body, a, button { cursor: none; }
 }
 
 @media (max-width: 640px) {
-  .top-strip {
-    font-size: 9px !important;
-    letter-spacing: 0.12em !important;
-    line-height: 1.35 !important;
-    padding-left: 14px !important;
-    padding-right: 14px !important;
-  }
-
   .p-grid {
     grid-template-columns: 1fr;
     gap: 28px;
