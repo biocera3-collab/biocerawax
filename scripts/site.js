@@ -51,7 +51,7 @@
   // Auto-split everything with data-split
   document.querySelectorAll('[data-split]').forEach(window.splitText);
 
-  // ---- Reveal via IntersectionObserver
+  // ---- Reveal via IntersectionObserver (each element observed once — avoids double .in on reveal + data-split)
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -60,19 +60,26 @@
       }
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal, [data-split], .stagger').forEach(el => io.observe(el));
-
-  // ---- Magnetic cursor on .magnetic
-  document.querySelectorAll('.magnetic').forEach(el => {
-    const strength = parseFloat(el.dataset.magnet) || 0.35;
-    el.addEventListener('mousemove', (e) => {
-      const r = el.getBoundingClientRect();
-      const x = e.clientX - (r.left + r.width/2);
-      const y = e.clientY - (r.top + r.height/2);
-      el.style.transform = `translate(${x*strength}px, ${y*strength}px)`;
-    });
-    el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+  const observed = new Set();
+  document.querySelectorAll('.reveal, [data-split], .stagger').forEach(el => {
+    if (observed.has(el)) return;
+    observed.add(el);
+    io.observe(el);
   });
+
+  // ---- Magnetic cursor on .magnetic (skip touch / coarse pointers — avoids stuck transforms on phones)
+  if (!matchMedia('(pointer: coarse)').matches) {
+    document.querySelectorAll('.magnetic').forEach(el => {
+      const strength = parseFloat(el.dataset.magnet) || 0.35;
+      el.addEventListener('mousemove', (e) => {
+        const r = el.getBoundingClientRect();
+        const x = e.clientX - (r.left + r.width/2);
+        const y = e.clientY - (r.top + r.height/2);
+        el.style.transform = `translate(${x*strength}px, ${y*strength}px)`;
+      });
+      el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+    });
+  }
 
   // ---- Scroll progress + scroll-linked custom props
   let scrollY = 0, ticking = false;

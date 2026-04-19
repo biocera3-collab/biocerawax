@@ -3,23 +3,26 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Biocera — 100% natural stripless Brazilian hard wax for professionals. Founded in Brazil, based in Manhattan." />
 <title>biocera — 100% natural depilatory wax</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Lora:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/site.css?v=3">
+<link rel="stylesheet" href="styles/site.css?v=5">
 </head>
 <body>
 
 <nav class="nav">
-  <a class="brand" href="index.html">b<em>i</em>ocera</a>
-  <div class="nav-links">
-    <a href="index.html" class="active">Index</a>
-    <a href="about.html">About</a>
-    <a href="products.html">Line</a>
-    <a href="education.html">Method</a>
-    <a href="blog.html">Journal</a>
-    <a href="contact.html">Say hi</a>
+  <div class="nav-inner">
+    <a class="brand" href="index.html">b<em>i</em>ocera</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Index</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Line</a>
+      <a href="education.html">Method</a>
+      <a href="blog.html">Journal</a>
+      <a href="contact.html">Say hi</a>
+    </div>
   </div>
 </nav>
 
@@ -140,31 +143,31 @@
     </div>
 
     <div class="p-grid">
-      <a href="products.html#signature" class="pc big cursor-grow reveal">
+      <a href="products/signature-wax.html" class="pc big cursor-grow reveal">
         <div class="img" data-go="Enter →"><img src="images/product.png" alt="Biocera stripless Brazilian hard wax"></div>
         <div class="num"><span>N° 01</span><span>The Signature</span></div>
         <h3>Stripless <em>Brazilian</em> Hard Wax</h3>
         <p>Quick, high-performance, less painful. The perfect all-purpose wax — for face and body.</p>
       </a>
-      <a href="products.html#oil" class="pc mid cursor-grow reveal">
+      <a href="products/bee-smooth-oil.html" class="pc mid cursor-grow reveal">
         <div class="img" data-go="Enter →"><img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=1600&q=80" alt=""></div>
         <div class="num"><span>N° 02</span><span>Post-wax</span></div>
         <h3>Bee Smooth <em>Oil</em></h3>
         <p>Apricot and manuka oils — cleanse, condition, calm redness, deter bacteria.</p>
       </a>
-      <a href="products.html#warmer" class="pc cursor-grow reveal">
+      <a href="products/pro-warmer.html" class="pc cursor-grow reveal">
         <div class="img" data-go="Enter →"><img src="images/bottom.png" alt="Biocera pro wax warmer and workspace"></div>
         <div class="num"><span>N° 03</span><span>Hardware</span></div>
         <h3>Pro Wax <em>Warmer</em></h3>
         <p>Ceramic basin, even heat, 5 lbs of wax at the perfect temperature, all day.</p>
       </a>
-      <a href="products.html#ingrown" class="pc cursor-grow reveal">
+      <a href="products/ingrown-treatment.html" class="pc cursor-grow reveal">
         <div class="img" data-go="Enter →"><img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=1200&q=80" alt=""></div>
         <div class="num"><span>N° 04</span><span>Treatment</span></div>
         <h3>Ingrown <em>Treatment</em></h3>
         <p>Natural antiseptics and salicylic acid release trapped hairs and calm inflammation.</p>
       </a>
-      <a href="products.html#tools" class="pc cursor-grow reveal">
+      <a href="products/spatulas-essentials.html" class="pc cursor-grow reveal">
         <div class="img" data-go="Enter →"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80" alt=""></div>
         <div class="num"><span>N° 05</span><span>Essentials</span></div>
         <h3>Spatulas &amp; <em>Essentials</em></h3>
@@ -254,7 +257,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 }/*EDITMODE-END*/;
 </script>
 
-<script src="scripts/site.js?v=3"></script>
+<script src="scripts/site.js?v=5"></script>
 <script>
 // ---- Hero slideshow
 (function(){
@@ -267,6 +270,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   const numEl = document.getElementById('c-num');
   const capEl = document.getElementById('c-cap');
   const tagEl = document.getElementById('tag-txt');
+  if (!slides.length || !numEl || !capEl || !tagEl) return;
   let i = 0;
   setInterval(() => {
     slides[i].classList.remove('on');
@@ -287,12 +291,13 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   const prog = document.getElementById('b-prog');
   const pNum = document.getElementById('p-num');
   const pFill = document.getElementById('p-fill');
+  if (!beliefs.length || !bgNum || !prog || !pNum || !pFill) return;
   let current = 0;
   function onScroll(){
     const r = stage.getBoundingClientRect();
     const vh = window.innerHeight;
     // progress through stage (0..1)
-    const total = r.height - vh;
+    const total = Math.max(1, r.height - vh);
     let p = (-r.top) / total;
     p = Math.max(0, Math.min(0.999, p));
     const idx = Math.floor(p * beliefs.length);
@@ -314,27 +319,30 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 // ---- Hero bleed variant
 (function(){
   const hero = document.querySelector('.hero');
+  const heroMedia = document.querySelector('.hero-media');
+  const heroBody = document.querySelector('.hero-body');
+  if (!hero || !heroMedia || !heroBody) return;
   function apply(){
     const v = document.documentElement.getAttribute('data-hero') || 'split';
     if (v === 'bleed') {
       hero.style.gridTemplateColumns = '1fr';
       hero.style.minHeight = '100vh';
-      document.querySelector('.hero-media').style.position = 'absolute';
-      document.querySelector('.hero-media').style.inset = '0';
-      document.querySelector('.hero-body').style.position = 'relative';
-      document.querySelector('.hero-body').style.zIndex = '2';
-      document.querySelector('.hero-body').style.color = '#f5efe0';
-      document.querySelector('.hero-body').style.backgroundImage = 'linear-gradient(to right, rgba(26,21,14,0.7), rgba(26,21,14,0.1))';
+      heroMedia.style.position = 'absolute';
+      heroMedia.style.inset = '0';
+      heroBody.style.position = 'relative';
+      heroBody.style.zIndex = '2';
+      heroBody.style.color = '#f5efe0';
+      heroBody.style.backgroundImage = 'linear-gradient(to right, rgba(26,21,14,0.7), rgba(26,21,14,0.1))';
       document.querySelectorAll('.hero-body .lede').forEach(e => e.style.color = 'rgba(245,239,224,0.85)');
     } else {
       hero.style.gridTemplateColumns = '';
       hero.style.minHeight = '';
-      document.querySelector('.hero-media').style.position = '';
-      document.querySelector('.hero-media').style.inset = '';
-      document.querySelector('.hero-body').style.position = '';
-      document.querySelector('.hero-body').style.zIndex = '';
-      document.querySelector('.hero-body').style.color = '';
-      document.querySelector('.hero-body').style.backgroundImage = '';
+      heroMedia.style.position = '';
+      heroMedia.style.inset = '';
+      heroBody.style.position = '';
+      heroBody.style.zIndex = '';
+      heroBody.style.color = '';
+      heroBody.style.backgroundImage = '';
       document.querySelectorAll('.hero-body .lede').forEach(e => e.style.color = '');
     }
   }

@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/site.css?v=3">
+<link rel="stylesheet" href="styles/site.css?v=4">
 <style>
   .edu-hero {
     padding: 100px 40px 60px;
@@ -58,6 +58,9 @@
   .vid .meta { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 10px; }
   .vid h3 { font-size: 28px; line-height: 1.15; font-style: italic; }
   .vid h3 em { color: var(--terracotta); font-style: normal; }
+  .edu-more { margin-top: 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; }
+  .edu-more a { color: var(--terracotta); }
+  .edu-more a:hover { color: var(--ink); }
 
   .tips-sec {
     border-top: 1px solid var(--rule);
@@ -74,10 +77,26 @@
   .tip p { color: var(--ink-2); }
 
   @media (max-width: 960px) {
-    .edu-hero { grid-template-columns: 1fr; padding: 60px 24px; }
+    .edu-hero { grid-template-columns: 1fr; padding: 56px 24px 44px; }
+    .edu-hero h1 { font-size: clamp(40px, 9vw, 80px); }
+    .videos { padding: 48px 0 72px; }
+    .videos .wrap { padding: 0 24px; }
     .vid-grid { grid-template-columns: 1fr; gap: 24px; }
     .vid.v-6, .vid.v-4, .vid.v-12 { grid-column: 1; }
-    .tips { grid-template-columns: 1fr; }
+    .vid.v-12 .img { aspect-ratio: 16/10; }
+    .tips-sec { padding: 88px 0; }
+    .tips-sec .wrap { padding: 0 24px; }
+    .tips { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 640px) {
+    .edu-hero { padding: 48px 20px 36px; }
+    .videos .wrap { padding: 0 20px; }
+    .vid h3 { font-size: 22px; }
+    .vid .play .dot { width: 64px; height: 64px; font-size: 14px; }
+    .tips-sec { padding: 64px 0; }
+    .tips-sec .wrap { padding: 0 20px; }
+    .tips-sec h2 { margin-bottom: 40px; font-size: clamp(28px, 7vw, 44px); }
+    .tip h4 { font-size: 24px; }
   }
 </style>
 </head>
@@ -116,6 +135,7 @@
           </div>
           <div class="meta"><span>Masterclass · Part 01</span><span>With Rosana Michail</span></div>
           <h3>The Brazilian <em>stripless</em> method, start to finish.</h3>
+          <p class="edu-more"><a href="education/masterclass-brazilian-method.html">Lesson page →</a></p>
         </div>
         <div class="vid v-6 reveal">
           <div class="img">
@@ -124,6 +144,7 @@
           </div>
           <div class="meta"><span>Technique</span><span>Intermediate</span></div>
           <h3>Warming wax to the <em>perfect</em> temperature.</h3>
+          <p class="edu-more"><a href="education/wax-temperature.html">Lesson page →</a></p>
         </div>
         <div class="vid v-6 reveal">
           <div class="img">
@@ -132,6 +153,7 @@
           </div>
           <div class="meta"><span>Client Care</span><span>Foundational</span></div>
           <h3>Consulting the client before the <em>first</em> strip.</h3>
+          <p class="edu-more"><a href="education/client-consultation.html">Lesson page →</a></p>
         </div>
         <div class="vid v-4 reveal">
           <div class="img">
@@ -140,6 +162,7 @@
           </div>
           <div class="meta"><span>Quick tip</span><span>0:03:10</span></div>
           <h3>Holding skin taut, correctly.</h3>
+          <p class="edu-more"><a href="education/skin-taut-technique.html">Lesson page →</a></p>
         </div>
         <div class="vid v-4 reveal">
           <div class="img">
@@ -148,6 +171,7 @@
           </div>
           <div class="meta"><span>Aftercare</span><span>0:04:02</span></div>
           <h3>Applying Bee Smooth Oil correctly.</h3>
+          <p class="edu-more"><a href="education/bee-smooth-application.html">Lesson page →</a></p>
         </div>
         <div class="vid v-4 reveal">
           <div class="img">
@@ -156,6 +180,7 @@
           </div>
           <div class="meta"><span>Room Setup</span><span>0:06:30</span></div>
           <h3>Building a natural-feel treatment room.</h3>
+          <p class="edu-more"><a href="education/treatment-room-setup.html">Lesson page →</a></p>
         </div>
       </div>
     </div>
@@ -201,7 +226,7 @@
       </div>
       <div><h4>Explore</h4><a href="about.html">About</a><a href="products.html">Products</a><a href="education.html">Education</a><a href="blog.html">Journal</a></div>
       <div><h4>Professionals</h4><a href="contact.html">Become a partner</a><a href="education.html">Training</a><a href="contact.html">Wholesale</a></div>
-      <div><h4>Connect</h4><a href="contact.html">hello@biocera.co</a><a href="#">Instagram</a><a href="#">Newsletter</a></div>
+      <div><h4>Connect</h4><a href="contact.html">hello@biocera.co</a><a href="https://instagram.com" rel="noopener noreferrer">Instagram</a><a href="contact.html">Newsletter</a></div>
     </div>
     <div class="footer-bottom"><div>© 2026 Biocera — Made with bees, not chemicals.</div><div>NYC · São Paulo</div></div>
   </div>
@@ -217,7 +242,7 @@
   </div>
 </div>
 
-<script src="scripts/site.js?v=3"></script>
+<script src="scripts/site.js?v=4"></script>
 <script>window.initTweaks && window.initTweaks();</script>
 </body>
 </html>
