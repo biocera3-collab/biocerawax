@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/site.css?v=5">
+<link rel="stylesheet" href="styles/site.css?v=4">
 <style>
   .blog-hero {
     padding: 100px 40px 40px;
@@ -49,41 +49,24 @@
   .post p { color: var(--ink-2); font-size: 15px; }
 
   @media (max-width: 960px) {
-    .blog-hero { grid-template-columns: 1fr; padding: 56px 24px 40px; }
-    .blog-hero h1 { font-size: clamp(40px, 9vw, 80px); }
-    .featured { padding: 32px 0 64px; }
-    .featured .wrap { grid-template-columns: 1fr; padding: 0 24px; gap: 28px; }
-    .featured h2 { font-size: clamp(30px, 7vw, 48px); }
-    .featured .ex { font-size: 17px; margin-bottom: 24px; }
-    .archive { padding: 72px 0; }
-    .archive .wrap { padding: 0 24px; }
-    .grid { grid-template-columns: 1fr; gap: 36px; }
-  }
-  @media (max-width: 640px) {
-    .blog-hero { padding: 48px 20px 32px; }
-    .featured .wrap { padding: 0 20px; gap: 22px; }
-    .featured .meta { margin-bottom: 16px; }
-    .archive { padding: 56px 0; }
-    .archive .wrap { padding: 0 20px; }
-    .archive h3 { margin-bottom: 28px; }
-    .post h4 { font-size: 22px; }
-    .post p { font-size: 14px; }
+    .blog-hero { grid-template-columns: 1fr; padding: 60px 24px; }
+    .featured .wrap { grid-template-columns: 1fr; padding: 0 24px; }
+    .grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<div class="top-strip" style="background: var(--void); color: var(--on-void); font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; text-align: center; padding: 10px 20px;">The Journal — dispatches from the chair, the salon &amp; the science</div>
+<div class="top-strip">The Journal — crates, chairs &amp; Summit, NJ dispatch</div>
 
 <nav class="nav" data-screen-label="Shared nav">
   <div class="nav-inner">
-    <a class="brand" href="index.html">b<em>i</em>ocera</a>
+    <a class="brand" href="index.html"><img src="images/logo.png" width="36" height="36" alt="">b<em>i</em>ocera</a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="education.html">Education</a>
-      <a href="blog.html" class="active">Blog</a>
+      <a href="products.html">Wax</a>
+      <a href="blog.html" class="active">Journal</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
@@ -99,13 +82,13 @@
   <section class="featured reveal">
     <div class="wrap">
       <div class="img">
-        <img src="images/product.png" alt="Biocera wax — warm, not hot">
+        <img src="images/wax-crates.jpeg" alt="Biocera wax crates stacked in Summit, NJ">
       </div>
       <div>
         <div class="meta">Issue 01 · April 2026 · Founder's Note</div>
-        <h2>Why we made Biocera <em>warm</em>, not hot.</h2>
-        <p class="ex">A short piece on why temperature is the first decision any wax formula makes — and why the North American standard has been wrong for decades. Most professional waxes are designed to work hot because they have to. Biocera was designed to work warm because it can.</p>
-        <a href="journal/warm-not-hot.html" class="btn-arrow"><span class="line"></span>Read the piece</a>
+        <h2>Why we ship <em>warm</em> wax philosophy in cold crates.</h2>
+        <p class="ex">Temperature is the first decision any formula makes. Our Summit pallets keep rooms stocked, but the blend inside still insists on low heat — Brazilian stripless craft, no need to incinerate the skin to get a clean pull.</p>
+        <a href="#" class="btn-arrow">Read the piece</a>
       </div>
     </div>
   </section>
@@ -114,41 +97,41 @@
     <div class="wrap">
       <h3>From the archive</h3>
       <div class="grid">
-        <a href="journal/skin-absorption.html" class="post reveal">
-          <div class="img"><img src="https://images.unsplash.com/photo-1556228720-da4e85bb4b73?w=800&q=80" alt=""></div>
-          <div class="meta"><span>Skin Science</span><span>6 min</span></div>
-          <h4>What your skin actually <em>absorbs</em>.</h4>
-          <p>A practical primer on transdermal absorption and why ingredient lists matter more in hair removal than in almost any other category.</p>
+        <a href="#" class="post reveal">
+          <div class="img"><img src="images/scene-hero.jpeg" alt=""></div>
+          <div class="meta"><span>Field notes</span><span>6 min</span></div>
+          <h4>Stacking pallets without losing the <em>tropical</em> soul.</h4>
+          <p>How we light the Summit warehouse the same way we light the brand — turquoise, sun yellow, palm green — so bulk logistics still feel human.</p>
         </a>
-        <a href="journal/treatment-room-calm.html" class="post reveal">
-          <div class="img"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80" alt=""></div>
-          <div class="meta"><span>Room Culture</span><span>4 min</span></div>
-          <h4>Designing a treatment room for <em>calm</em>.</h4>
-          <p>Lighting, temperature, scent, sound, and the small rituals that turn a generic wax room into a place clients look forward to.</p>
+        <a href="#" class="post reveal">
+          <div class="img"><img src="images/wax-crates.jpeg" alt=""></div>
+          <div class="meta"><span>Logistics</span><span>4 min</span></div>
+          <h4>Freight days that smell like <em>beeswax</em>, not cardboard.</h4>
+          <p>What happens when a crate leaves New Jersey: humidity checks, shrink wrap, and the odd bee-hum note that reminds you this is still a kitchen formula.</p>
         </a>
-        <a href="journal/manuka-oil.html" class="post reveal">
-          <div class="img"><img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=800&q=80" alt=""></div>
-          <div class="meta"><span>Ingredient Notes</span><span>3 min</span></div>
-          <h4>Manuka oil, <em>properly</em> introduced.</h4>
-          <p>The small, nervy, botanical hero of Bee Smooth Oil — what it is, where it comes from, and why we use it post-wax.</p>
+        <a href="#" class="post reveal">
+          <div class="img"><img src="images/wax-crates-2.jpeg" alt=""></div>
+          <div class="meta"><span>Salon math</span><span>3 min</span></div>
+          <h4>How many services hide inside one <em>crate</em>?</h4>
+          <p>Back-of-napkin throughput for high-volume rooms — why buying wax by the pallet keeps per-service costs sunny-side up.</p>
         </a>
-        <a href="journal/new-waxer-mistakes.html" class="post reveal">
-          <div class="img"><img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?w=800&q=80" alt=""></div>
+        <a href="#" class="post reveal">
+          <div class="img"><img src="images/wax-crates-2.jpeg" alt=""></div>
           <div class="meta"><span>The Craft</span><span>5 min</span></div>
           <h4>Three mistakes most <em>new</em> waxers make.</h4>
-          <p>Overheating the wax. Applying too thick. Pulling too slowly. An honest essay on the fixes, from Rosana.</p>
+          <p>Overheating the wax. Applying too thick. Pulling too slowly. Honest fixes from Rosana's chair — still the north star of the blend.</p>
         </a>
-        <a href="journal/sao-paulo-waxing.html" class="post reveal">
-          <div class="img"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80" alt=""></div>
+        <a href="#" class="post reveal">
+          <div class="img"><img src="images/scene-hero.jpeg" alt=""></div>
           <div class="meta"><span>On Brazil</span><span>7 min</span></div>
           <h4>Why <em>São Paulo</em> waxes differently.</h4>
-          <p>A cultural history of Brazilian waxing — the technique, the temperature, the intimacy, the trust — and what the rest of the world quietly got wrong.</p>
+          <p>Temperature, intimacy, trust — the cultural spine of Brazilian stripless work, now living beside Jersey freeways.</p>
         </a>
-        <a href="journal/chemical-free-labels.html" class="post reveal">
-          <div class="img"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800&q=80" alt=""></div>
-          <div class="meta"><span>Clean Beauty</span><span>5 min</span></div>
-          <h4>What "chemical free" <em>actually</em> means.</h4>
-          <p>A field-guide to the language of clean beauty, and how to read a wax label in under 30 seconds.</p>
+        <a href="#" class="post reveal">
+          <div class="img"><img src="images/wax-crates.jpeg" alt=""></div>
+          <div class="meta"><span>Clean beauty</span><span>5 min</span></div>
+          <h4>What "chemical free" <em>actually</em> means here.</h4>
+          <p>A quick read on our short ingredient deck — nothing hiding behind accessory SKUs.</p>
         </a>
       </div>
     </div>
@@ -161,13 +144,13 @@
     <div class="footer-grid">
       <div>
         <div class="brand" style="margin-bottom:14px">b<em>i</em>ocera</div>
-        <p style="max-width:360px; color: var(--ink-2); margin-top:12px;">100% natural depilatory hard wax for face and body, for professional waxers. Founded in Brazil. Based in Manhattan.</p>
+        <p style="max-width:360px; color: var(--ink-2); margin-top:12px;">100% natural stripless Brazilian wax in wholesale crates. Rooted in São Paulo. Staged in Summit, New Jersey.</p>
       </div>
-      <div><h4>Explore</h4><a href="about.html">About</a><a href="products.html">Products</a><a href="education.html">Education</a><a href="blog.html">Journal</a></div>
-      <div><h4>Professionals</h4><a href="contact.html">Become a partner</a><a href="education.html">Training</a><a href="contact.html">Wholesale</a></div>
-      <div><h4>Connect</h4><a href="contact.html">hello@biocera.co</a><a href="https://instagram.com" rel="noopener noreferrer">Instagram</a><a href="contact.html">Newsletter</a></div>
+      <div><h4>Explore</h4><a href="about.html">About</a><a href="products.html">Wax</a><a href="blog.html">Journal</a></div>
+      <div><h4>Professionals</h4><a href="contact.html">Become a partner</a><a href="contact.html">Wholesale crates</a><a href="contact.html">Distributors</a></div>
+      <div><h4>Connect</h4><a href="contact.html">hello@biocera.co</a><a href="#">Instagram</a><a href="#">Newsletter</a></div>
     </div>
-    <div class="footer-bottom"><div>© 2026 Biocera — Made with bees, not chemicals.</div><div>NYC · São Paulo</div></div>
+    <div class="footer-bottom"><div>© 2026 Biocera — Made with bees, not chemicals.</div><div>Summit, NJ · São Paulo</div></div>
   </div>
 </footer>
 
@@ -177,7 +160,7 @@
     <div class="swatches"><div class="sw sw-a active" data-palette="earth"></div><div class="sw sw-b" data-palette="tropical"></div></div>
   </div>
 </div>
-<script src="scripts/site.js?v=5"></script>
+<script src="scripts/site.js?v=4"></script>
 <script>window.initTweaks && window.initTweaks();</script>
 </body>
 </html>

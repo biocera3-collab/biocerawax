@@ -170,8 +170,8 @@
   /* formula callout */
   .formula {
     border-top: 1px solid var(--rule);
-    background: var(--void);
-    color: var(--on-void);
+    background: var(--ink);
+    color: var(--paper);
     padding: 140px 0;
   }
   .formula .wrap {
@@ -188,7 +188,7 @@
   .formula h2 em { color: var(--honey); font-style: italic; }
   .formula-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 40px; }
   .formula .item {
-    border-top: 1px solid rgba(230, 232, 239, 0.22);
+    border-top: 1px solid rgba(244,239,230,0.2);
     padding-top: 20px;
   }
   .formula .item .k {
@@ -208,54 +208,26 @@
   .formula .item p { font-size: 14px; opacity: 0.75; }
 
   @media (max-width: 960px) {
-    .about-hero { grid-template-columns: 1fr; padding: 72px 24px 56px; gap: 20px; }
-    .about-hero h1 { font-size: clamp(40px, 9vw, 80px); }
-    .story-grid { grid-template-columns: 1fr; padding: 0 24px; gap: 40px; }
-    .story { padding: 100px 0; }
-    .timeline { padding: 88px 0; }
-    .philo { padding: 100px 0; }
-    .formula { padding: 100px 0; }
+    .about-hero { grid-template-columns: 1fr; padding: 80px 24px; gap: 24px; }
+    .story-grid { grid-template-columns: 1fr; padding: 0 24px; }
     .tl-grid { grid-template-columns: 1fr 1fr; }
     .philo-grid { grid-template-columns: 1fr; }
     .formula-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 640px) {
-    .about-hero { padding: 56px 20px 48px; gap: 16px; }
-    .about-hero h1 { font-size: clamp(34px, 10vw, 56px); }
-    .marquee { font-size: clamp(20px, 5.5vw, 36px); }
-    .marquee span { margin: 0 18px; }
-    .story { padding: 72px 0; }
-    .story-grid { padding: 0 20px; gap: 32px; }
-    .story p.first::first-letter { font-size: 52px; margin: 4px 10px 0 0; }
-    .story h2 { font-size: clamp(28px, 7vw, 44px); margin-bottom: 22px; }
-    .story p { font-size: 16px; }
-    .timeline { padding: 64px 0; }
-    .timeline .wrap { padding: 0 20px; }
-    .timeline h2 { margin-bottom: 40px; }
-    .tl-grid { grid-template-columns: 1fr; gap: 28px; }
-    .philo { padding: 72px 0; }
-    .philo .wrap { padding: 0 20px; }
-    .philo-head { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 40px; }
-    .formula { padding: 72px 0; }
-    .formula .wrap { padding: 0 20px; }
-    .formula h2 { margin-bottom: 40px; }
-    .formula-grid { grid-template-columns: 1fr; gap: 28px; }
   }
 </style>
 </head>
 <body>
 
-<div class="top-strip" style="background: var(--void); color: var(--ink); font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; text-align: center; padding: 10px 20px;">Founded in Brazil — Based in Manhattan — For professional waxers</div>
+<div class="top-strip">Founded in Brazil — wholesale hub in Summit, NJ — for professional waxers</div>
 
 <nav class="nav" data-screen-label="Shared nav">
   <div class="nav-inner">
-    <a class="brand" href="index.html">b<em>i</em>ocera</a>
+    <a class="brand" href="index.html"><img src="images/logo.png" width="36" height="36" alt="">b<em>i</em>ocera</a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html" class="active">About</a>
-      <a href="products.html">Products</a>
-      <a href="education.html">Education</a>
-      <a href="blog.html">Blog</a>
+      <a href="products.html">Wax</a>
+      <a href="blog.html">Journal</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
@@ -265,13 +237,13 @@
 
   <section class="about-hero">
     <div class="eyebrow">Chapter 01<br>Our story</div>
-    <h1>Forty years of formula — from a salon in São Paulo to every <em>serious</em> waxer in the world.</h1>
+    <h1>Forty years of formula — from São Paulo salons to <em>pallet-high</em> crates in Summit, New Jersey.</h1>
   </section>
 
   <div class="marquee">
     <div class="track">
-      Founded in Brazil<span>·</span>Based in Manhattan<span>·</span>100% natural<span>·</span>Chemical free<span>·</span>Paraben free<span>·</span>Gluten free<span>·</span>For the professional<span>·</span>
-      Founded in Brazil<span>·</span>Based in Manhattan<span>·</span>100% natural<span>·</span>Chemical free<span>·</span>Paraben free<span>·</span>Gluten free<span>·</span>For the professional<span>·</span>
+      Founded in Brazil<span>·</span>Summit NJ warehouse<span>·</span>100% natural<span>·</span>Chemical free<span>·</span>Paraben free<span>·</span>Gluten free<span>·</span>For the professional<span>·</span>
+      Founded in Brazil<span>·</span>Summit NJ warehouse<span>·</span>100% natural<span>·</span>Chemical free<span>·</span>Paraben free<span>·</span>Gluten free<span>·</span>For the professional<span>·</span>
     </div>
   </div>
 
@@ -279,7 +251,7 @@
     <div class="story-grid">
       <div class="col-image reveal">
         <div class="photo">
-          <img src="images/top.png" alt="Biocera — natural textures in the workspace">
+          <img src="images/scene-hero.jpeg" alt="Biocera workspace — light tropical palette">
         </div>
         <div class="caption"><span>Fig. 01 — São Paulo, 1986</span><span>Archive</span></div>
       </div>
@@ -289,7 +261,7 @@
         <p class="first">Rosana grew up in São Paulo, Brazil, where her mother owned a large salon and formulated her own natural depilatory wax. Rosana was trained by her mother in waxing — then went on to study chemistry, to take the family formulas to the next level.</p>
         <p>Once in the United States, Rosana quickly realized there was a huge opportunity to give clients a better — 100% natural — waxing experience than the one they'd been used to in North America.</p>
         <p>After getting her esthetician license, she opened her first waxing spa in Manhattan. Over ten years, dozens of salons and professional waxers asked to buy her wax. She always said no; she only made enough for her own rooms.</p>
-        <p>Now, Biocera is how we bring that 40-year-old formula to every serious waxer, everywhere.</p>
+        <p>Now, Biocera is how we bring that 40-year-old formula to serious waxers — consolidated through our Summit, New Jersey hub so rooms can stock up by the crate.</p>
       </div>
     </div>
   </section>
@@ -315,9 +287,9 @@
           <p>The first Biocera waxing spa opens in Manhattan. Clients and pros ask, repeatedly, where to buy the wax.</p>
         </div>
         <div class="tl reveal">
-          <div class="year">2026 / WORLDWIDE</div>
-          <h4>For every waxer</h4>
-          <p>Forty years in, the wax is available to independent salons and professionals around the world.</p>
+          <div class="year">2026 / SUMMIT, NJ</div>
+          <h4>Crates &amp; coasts</h4>
+          <p>Forty years in, the same stripless blend ships in wholesale crates from our New Jersey warehouse to waxers who want volume without a noisy retail catalog.</p>
         </div>
       </div>
     </div>
@@ -388,20 +360,19 @@
     <div class="footer-grid">
       <div>
         <div class="brand" style="margin-bottom:14px">b<em>i</em>ocera</div>
-        <p style="max-width:360px; color: var(--ink-2); margin-top:12px;">100% natural depilatory hard wax for face and body, for professional waxers. Founded in Brazil. Based in Manhattan.</p>
+        <p style="max-width:360px; color: var(--ink-2); margin-top:12px;">100% natural stripless Brazilian wax in wholesale crates. Founded in Brazil. Staged in Summit, New Jersey.</p>
       </div>
       <div>
         <h4>Explore</h4>
         <a href="about.html">About</a>
-        <a href="products.html">Products</a>
-        <a href="education.html">Education</a>
+        <a href="products.html">Wax</a>
         <a href="blog.html">Journal</a>
       </div>
       <div>
         <h4>Professionals</h4>
         <a href="contact.html">Become a partner</a>
-        <a href="education.html">Training</a>
-        <a href="contact.html">Wholesale</a>
+        <a href="contact.html">Wholesale crates</a>
+        <a href="contact.html">Distributors</a>
       </div>
       <div>
         <h4>Connect</h4>
@@ -412,7 +383,7 @@
     </div>
     <div class="footer-bottom">
       <div>© 2026 Biocera — Made with bees, not chemicals.</div>
-      <div>NYC · São Paulo</div>
+      <div>Summit, NJ · São Paulo</div>
     </div>
   </div>
 </footer>
@@ -422,8 +393,8 @@
   <div class="tw-row">
     <label>Palette</label>
     <div class="swatches">
-      <div class="sw sw-a active" data-palette="earth" title="Noir &amp; gold"></div>
-      <div class="sw sw-b" data-palette="tropical" title="Cool platinum"></div>
+      <div class="sw sw-a active" data-palette="earth" title="Lagoon &amp; sun"></div>
+      <div class="sw sw-b" data-palette="tropical" title="Citrus punch"></div>
     </div>
   </div>
 </div>
