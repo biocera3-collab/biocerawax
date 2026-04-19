@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/site.css?v=4">
+<link rel="stylesheet" href="styles/site.css?v=3">
 <style>
   .edu-hero {
     padding: 100px 40px 60px;
@@ -74,26 +74,10 @@
   .tip p { color: var(--ink-2); }
 
   @media (max-width: 960px) {
-    .edu-hero { grid-template-columns: 1fr; padding: 56px 24px 44px; }
-    .edu-hero h1 { font-size: clamp(40px, 9vw, 80px); }
-    .videos { padding: 48px 0 72px; }
-    .videos .wrap { padding: 0 24px; }
+    .edu-hero { grid-template-columns: 1fr; padding: 60px 24px; }
     .vid-grid { grid-template-columns: 1fr; gap: 24px; }
     .vid.v-6, .vid.v-4, .vid.v-12 { grid-column: 1; }
-    .vid.v-12 .img { aspect-ratio: 16/10; }
-    .tips-sec { padding: 88px 0; }
-    .tips-sec .wrap { padding: 0 24px; }
-    .tips { grid-template-columns: 1fr; gap: 40px; }
-  }
-  @media (max-width: 640px) {
-    .edu-hero { padding: 48px 20px 36px; }
-    .videos .wrap { padding: 0 20px; }
-    .vid h3 { font-size: 22px; }
-    .vid .play .dot { width: 64px; height: 64px; font-size: 14px; }
-    .tips-sec { padding: 64px 0; }
-    .tips-sec .wrap { padding: 0 20px; }
-    .tips-sec h2 { margin-bottom: 40px; font-size: clamp(28px, 7vw, 44px); }
-    .tip h4 { font-size: 24px; }
+    .tips { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -233,7 +217,7 @@
   </div>
 </div>
 
-<script src="scripts/site.js?v=4"></script>
+<script src="scripts/site.js?v=3"></script>
 <script>window.initTweaks && window.initTweaks();</script>
 </body>
 </html>

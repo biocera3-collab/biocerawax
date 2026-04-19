@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/site.css?v=4">
+<link rel="stylesheet" href="styles/site.css?v=3">
 <style>
   .prods-hero {
     padding: 100px 40px 60px;
@@ -96,28 +96,12 @@
   .pull .attr { margin-top: 28px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-2); }
 
   @media (max-width: 960px) {
-    .prods-hero { grid-template-columns: 1fr; padding: 56px 24px 44px; gap: 16px; }
-    .prods-hero h1 { font-size: clamp(40px, 9vw, 80px); }
-    .filter-bar { flex-direction: column; gap: 12px; align-items: flex-start; padding: 14px 24px; }
-    .filter-bar .chips { flex-wrap: wrap; gap: 14px; row-gap: 8px; }
-    .product { padding: 72px 0; }
-    .product .wrap { grid-template-columns: 1fr; padding: 0 24px; gap: 24px; }
+    .prods-hero { grid-template-columns: 1fr; padding: 60px 24px; gap: 20px; }
+    .filter-bar { flex-direction: column; gap: 12px; align-items: flex-start; }
+    .filter-bar .chips { flex-wrap: wrap; gap: 16px; }
+    .product .wrap { grid-template-columns: 1fr; padding: 0 24px; gap: 28px; }
     .product.reverse .wrap { grid-template-columns: 1fr; }
     .product.reverse .image, .product.reverse .side, .product.reverse .content { grid-column: 1; }
-    .pull { padding: 88px 24px; }
-  }
-  @media (max-width: 640px) {
-    .prods-hero { padding: 48px 20px 36px; }
-    .filter-bar { padding: 12px 20px; }
-    .filter-bar .chips { gap: 12px; }
-    .product { padding: 56px 0; }
-    .product .wrap { padding: 0 20px; gap: 20px; }
-    .product h2 { font-size: clamp(28px, 7vw, 44px); }
-    .product .kicker { font-size: 19px; }
-    .product p { font-size: 16px; }
-    .product .specs { grid-template-columns: 1fr; gap: 12px 0; }
-    .pull { padding: 64px 20px; }
-    .pull q { font-size: clamp(26px, 6vw, 40px); }
   }
 </style>
 </head>
@@ -363,7 +347,7 @@
   </div>
 </div>
 
-<script src="scripts/site.js?v=4"></script>
+<script src="scripts/site.js?v=3"></script>
 <script>window.initTweaks && window.initTweaks();</script>
 
 </body>
