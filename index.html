@@ -12,7 +12,7 @@
 <body>
 
 <nav class="nav">
-  <a class="brand" href="index.html"><img src="images/logo.png" width="36" height="36" alt="">b<em>i</em>ocera</a>
+  <a class="brand" href="index.html">b<em>i</em>ocera</a>
   <div class="nav-links">
     <a href="index.html" class="active">Index</a>
     <a href="about.html">About</a>
@@ -27,9 +27,9 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-media" id="media">
-      <div class="slide on" style="background-image:url('images/scene-hero.jpeg')"></div>
-      <div class="slide" style="background-image:url('images/wax-crates.jpeg')"></div>
-      <div class="slide" style="background-image:url('images/wax-crates-2.jpeg')"></div>
+      <div class="slide on" style="background-image:url('images/top.png')"></div>
+      <div class="slide" style="background-image:url('images/product.png')"></div>
+      <div class="slide" style="background-image:url('images/bottom.png')"></div>
       <div class="tag"><span class="bar"></span><span id="tag-txt">Tropical · Light</span></div>
       <div class="counter"><span class="num" id="c-num">01</span><span>/ 03</span><span id="c-cap" style="margin-left:18px">Scene — Studio &amp; sky</span></div>
     </div>
@@ -140,7 +140,7 @@
 
     <div class="p-grid">
       <a href="products.html#crates" class="pc only cursor-grow reveal">
-        <div class="img" data-go="Enter →"><img src="images/wax-crates.jpeg" alt="Pallets of Biocera Brazilian hard wax crates"></div>
+        <div class="img" data-go="Enter →"><img src="images/product.png" alt="Pallets of Biocera Brazilian hard wax crates"></div>
         <div class="num"><span>N° 01</span><span>Only SKU we push</span></div>
         <h3>Stripless Brazilian hard wax — <em>by the crate</em></h3>
         <p>Photographed here the way it leaves Summit: big stacks, shrink-wrapped pallets, ready for high-volume wax rooms. Warm application, hair-focused grip, beeswax and botanicals — nothing else merchandised beside it.</p>
@@ -209,8 +209,8 @@
   <div class="tw-row">
     <label>Palette</label>
     <div class="swatches">
-      <div class="sw sw-a active" data-palette="earth" title="Lagoon &amp; sun"></div>
-      <div class="sw sw-b" data-palette="tropical" title="Citrus punch"></div>
+      <div class="sw sw-a active" data-palette="earth" title="Honey &amp; cream"></div>
+      <div class="sw sw-b" data-palette="tropical" title="Tropical green"></div>
     </div>
   </div>
   <div class="tw-row">
@@ -298,9 +298,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       document.querySelector('.hero-media').style.inset = '0';
       document.querySelector('.hero-body').style.position = 'relative';
       document.querySelector('.hero-body').style.zIndex = '2';
-      document.querySelector('.hero-body').style.color = '#f5fffb';
-      document.querySelector('.hero-body').style.backgroundImage = 'linear-gradient(to right, rgba(15,61,58,0.72), rgba(15,61,58,0.12))';
-      document.querySelectorAll('.hero-body .lede').forEach(e => e.style.color = 'rgba(245,255,251,0.88)');
+      document.querySelector('.hero-body').style.color = '#f5efe0';
+      document.querySelector('.hero-body').style.backgroundImage = 'linear-gradient(to right, rgba(26,21,14,0.7), rgba(26,21,14,0.1))';
+      document.querySelectorAll('.hero-body .lede').forEach(e => e.style.color = 'rgba(245,239,224,0.85)');
     } else {
       hero.style.gridTemplateColumns = '';
       hero.style.minHeight = '';
