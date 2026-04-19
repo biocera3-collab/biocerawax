@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Products — biocera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/site.css?v=3">
+<style>
+  .prods-hero {
+    padding: 100px 40px 60px;
+    max-width: 1360px; margin: 0 auto;
+    display: grid; grid-template-columns: 200px 1fr 280px; gap: 60px; align-items: end;
+  }
+  .prods-hero h1 { font-size: clamp(56px, 7vw, 128px); line-height: 0.98; letter-spacing: -0.015em; }
+  .prods-hero h1 em { color: var(--terracotta); }
+  .prods-hero .note { font-family: var(--serif-text); font-style: italic; color: var(--ink-2); font-size: 16px; line-height: 1.6; }
+
+  .filter-bar {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    max-width: 1360px; margin: 60px auto 0;
+  }
+  .filter-bar .chips { display: flex; gap: 24px; }
+  .filter-bar a { color: var(--ink-2); }
+  .filter-bar a.active { color: var(--terracotta); }
+
+  .product {
+    padding: 100px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .product .wrap {
+    max-width: 1360px; margin: 0 auto; padding: 0 40px;
+    display: grid; grid-template-columns: 200px 1fr 1fr; gap: 60px; align-items: start;
+  }
+  .product .side .num {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.22em; color: var(--terracotta);
+    margin-bottom: 12px;
+  }
+  .product .side .cat {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-2);
+  }
+  .product .image .photo { aspect-ratio: 4/5; overflow: hidden; }
+  .product .image .photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease; }
+  .product:hover .image .photo img { transform: scale(1.04); }
+  .product h2 {
+    font-size: clamp(36px, 4vw, 56px);
+    line-height: 1.05;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .product h2 em { color: var(--terracotta); font-style: italic; }
+  .product .kicker {
+    font-family: var(--serif-display);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--terracotta);
+    margin-bottom: 24px;
+  }
+  .product p { font-size: 17px; color: var(--ink-2); margin-bottom: 18px; line-height: 1.7; }
+  .product .specs {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px;
+    margin-top: 32px; padding-top: 28px;
+    border-top: 1px solid var(--rule);
+  }
+  .product .specs dt { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 4px; }
+  .product .specs dd { font-family: var(--serif-display); font-size: 19px; font-style: italic; margin: 0 0 14px; }
+
+  .product.reverse .wrap { grid-template-columns: 1fr 1fr 200px; }
+  .product.reverse .image { grid-column: 3; }
+  .product.reverse .side { grid-column: 1; }
+  .product.reverse .content { grid-column: 2; }
+
+  /* pull quote */
+  .pull {
+    padding: 120px 40px;
+    text-align: center;
+    border-bottom: 1px solid var(--rule);
+  }
+  .pull q {
+    font-family: var(--serif-display);
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1.08;
+    font-style: italic;
+    quotes: "\201C" "\201D";
+    max-width: 1100px; display: inline-block;
+  }
+  .pull q em { color: var(--terracotta); font-style: normal; }
+  .pull .attr { margin-top: 28px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-2); }
+
+  @media (max-width: 960px) {
+    .prods-hero { grid-template-columns: 1fr; padding: 60px 24px; gap: 20px; }
+    .filter-bar { flex-direction: column; gap: 12px; align-items: flex-start; }
+    .filter-bar .chips { flex-wrap: wrap; gap: 16px; }
+    .product .wrap { grid-template-columns: 1fr; padding: 0 24px; gap: 28px; }
+    .product.reverse .wrap { grid-template-columns: 1fr; }
+    .product.reverse .image, .product.reverse .side, .product.reverse .content { grid-column: 1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-strip" style="background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; text-align: center; padding: 10px 20px;">Professional use only — For trained estheticians &amp; salons</div>
+
+<nav class="nav" data-screen-label="Shared nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">b<em>i</em>ocera</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="education.html">Education</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main data-screen-label="03 Products">
+
+  <section class="prods-hero">
+    <div class="eyebrow">The Collection<br>2026 / Vol. 01</div>
+    <h1>The <em>line</em>, made naturally.</h1>
+    <div class="note">A small, intentional system. One signature wax. One post-wax oil. The hardware and essentials that make it all work in a professional room.</div>
+  </section>
+
+  <div class="filter-bar">
+    <div class="chips">
+      <a class="active" href="#">All (08)</a>
+      <a href="#signature">Wax</a>
+      <a href="#oil">Post-Wax</a>
+      <a href="#warmer">Hardware</a>
+      <a href="#tools">Essentials</a>
+    </div>
+    <div>Professional · Natural · Made in small batches</div>
+  </div>
+
+  <article class="product" id="signature">
+    <div class="wrap">
+      <div class="side">
+        <div class="num">No. 01 / 08</div>
+        <div class="cat">The Signature</div>
+      </div>
+      <div class="image reveal">
+        <div class="photo">
+          <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=1200&q=80" alt="Honey-toned wax texture">
+        </div>
+      </div>
+      <div class="content reveal">
+        <div class="kicker">"The perfect all-purpose wax."</div>
+        <h2>Stripless Brazilian Hard <em>Wax</em></h2>
+        <p>Our signature 100% natural hard wax provides quick, high-performance results with a less painful waxing experience. Biocera stripless wax can be applied in multiple, large sections without breaking or becoming rigid.</p>
+        <p>Heated at low temperatures to minimize irritation, it adheres only to the hair — not the skin itself. Our secret blend of natural ingredients gently and effectively removes both fine and coarse hair with one application, leaving the skin smooth and conditioned by beeswax and essential oils.</p>
+        <dl class="specs">
+          <div><dt>Format</dt><dd>Hard wax / Stripless</dd></div>
+          <div><dt>For</dt><dd>Face &amp; body</dd></div>
+          <div><dt>Base</dt><dd>Beeswax &amp; botanicals</dd></div>
+          <div><dt>Free of</dt><dd>Parabens, gluten, dyes</dd></div>
+        </dl>
+      </div>
+    </div>
+  </article>
+
+  <article class="product reverse" id="oil">
+    <div class="wrap">
+      <div class="side">
+        <div class="num">No. 02 / 08</div>
+        <div class="cat">Post-Wax</div>
+      </div>
+      <div class="content reveal">
+        <div class="kicker">"The finishing ritual."</div>
+        <h2>Bee Smooth <em>Oil</em></h2>
+        <p>A soothing skin-conditioning oil made specifically for waxed skin. Apply this essential oil blend after waxing treatments to cleanse, condition and calm redness.</p>
+        <p>Apricot oil and manuka oil work in harmony to soothe skin and deter bacteria while nourishing and softening. A quiet, finishing ritual for every service.</p>
+        <dl class="specs">
+          <div><dt>Hero ingredient</dt><dd>Manuka &amp; apricot</dd></div>
+          <div><dt>For</dt><dd>Post-wax skin</dd></div>
+          <div><dt>Scent</dt><dd>Warm, botanical</dd></div>
+          <div><dt>Skin type</dt><dd>All, even sensitive</dd></div>
+        </dl>
+      </div>
+      <div class="image reveal">
+        <div class="photo">
+          <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=1200&q=80" alt="Amber oil bottle in warm light">
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="product" id="warmer">
+    <div class="wrap">
+      <div class="side">
+        <div class="num">No. 03 / 08</div>
+        <div class="cat">Hardware</div>
+      </div>
+      <div class="image reveal">
+        <div class="photo">
+          <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?w=1200&q=80" alt="Ceramic workspace bowl">
+        </div>
+      </div>
+      <div class="content reveal">
+        <div class="kicker">"A salon must-have."</div>
+        <h2>Pro Large Wax <em>Warmer</em></h2>
+        <p>Biocera's Pro Large Wax Warmer is engineered to heat large quantities of hard wax quickly and evenly. Thick ceramic basin, durable heating system: the wax is heated evenly and the warmer maintains up to 5 pounds of Biocera wax at the perfect application temperature — all day.</p>
+        <dl class="specs">
+          <div><dt>Capacity</dt><dd>Up to 5 lbs</dd></div>
+          <div><dt>Basin</dt><dd>Thick ceramic</dd></div>
+          <div><dt>Heat</dt><dd>Even, low, all-day</dd></div>
+          <div><dt>Built for</dt><dd>High-volume rooms</dd></div>
+        </dl>
+      </div>
+    </div>
+  </article>
+
+  <section class="pull">
+    <q>Warm, never <em>hot</em>. On the hair, not on the <em>skin</em>.</q>
+    <div class="attr">The Biocera principle</div>
+  </section>
+
+  <article class="product reverse" id="ingrown">
+    <div class="wrap">
+      <div class="side">
+        <div class="num">No. 04 / 08</div>
+        <div class="cat">Treatment</div>
+      </div>
+      <div class="content reveal">
+        <div class="kicker">"For those annoying bumps."</div>
+        <h2>Ingrown Hair <em>Treatment</em></h2>
+        <p>Eliminate bumps and ingrown hairs for good. Made with natural antiseptics and salicylic acid, this spray releases trapped ingrown hairs and is great for reducing skin inflammation and irritation.</p>
+        <p>Recommended for use 24 hours after waxing, as part of the aftercare ritual.</p>
+        <dl class="specs">
+          <div><dt>Format</dt><dd>Spray</dd></div>
+          <div><dt>Active</dt><dd>Salicylic acid</dd></div>
+          <div><dt>Use after</dt><dd>24 hours post-wax</dd></div>
+          <div><dt>Helps with</dt><dd>Ingrowns, bumps</dd></div>
+        </dl>
+      </div>
+      <div class="image reveal">
+        <div class="photo">
+          <img src="https://images.unsplash.com/photo-1556228720-da4e85bb4b73?w=1200&q=80" alt="Glass spray bottle">
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="product" id="tools">
+    <div class="wrap">
+      <div class="side">
+        <div class="num">No. 05 / 08</div>
+        <div class="cat">Essentials</div>
+      </div>
+      <div class="image reveal">
+        <div class="photo">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80" alt="Wood spatulas laid flat">
+        </div>
+      </div>
+      <div class="content reveal">
+        <div class="kicker">"Small, disposable, right-sized."</div>
+        <h2>Spatulas &amp; <em>Essentials</em></h2>
+        <p>The daily kit: 6" spatulas (pack of 500) sized for full-body waxing; small spatulas (pack of 100); extra-large spatulas; disposable bikinis; 3" cotton pads (pack of 100). Everything the pro reaches for — designed to work with our stripless hard wax.</p>
+        <dl class="specs">
+          <div><dt>6" Spatulas</dt><dd>Pack of 500</dd></div>
+          <div><dt>Small Spatulas</dt><dd>Pack of 100</dd></div>
+          <div><dt>XL Spatula</dt><dd>Single</dd></div>
+          <div><dt>Cotton Pads 3"</dt><dd>Pack of 100</dd></div>
+        </dl>
+      </div>
+    </div>
+  </article>
+
+  <article class="product reverse" id="cleaner">
+    <div class="wrap">
+      <div class="side">
+        <div class="num">No. 06 / 08</div>
+        <div class="cat">Maintenance</div>
+      </div>
+      <div class="content reveal">
+        <div class="kicker">"For the warmer, the tools, the room."</div>
+        <h2>Wax <em>Cleaner</em></h2>
+        <p>A purpose-made cleaner for the warmer basin, tools and work surfaces. Keeps the hardware in pristine shape and the treatment room smelling like Biocera — warm, botanical, clean.</p>
+        <dl class="specs">
+          <div><dt>Format</dt><dd>Concentrated liquid</dd></div>
+          <div><dt>Use on</dt><dd>Basin, tools, surfaces</dd></div>
+          <div><dt>Scent</dt><dd>Light &amp; botanical</dd></div>
+          <div><dt>Pairs with</dt><dd>Pro Wax Warmer</dd></div>
+        </dl>
+      </div>
+      <div class="image reveal">
+        <div class="photo">
+          <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=1200&q=80" alt="Clean ceramic surface">
+        </div>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<footer class="footer" data-screen-label="Shared footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px">b<em>i</em>ocera</div>
+        <p style="max-width:360px; color: var(--ink-2); margin-top:12px;">100% natural depilatory hard wax for face and body, for professional waxers. Founded in Brazil. Based in Manhattan.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="education.html">Education</a>
+        <a href="blog.html">Journal</a>
+      </div>
+      <div>
+        <h4>Professionals</h4>
+        <a href="contact.html">Become a partner</a>
+        <a href="education.html">Training</a>
+        <a href="contact.html">Wholesale</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="contact.html">hello@biocera.co</a>
+        <a href="#">Instagram</a>
+        <a href="#">Newsletter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Biocera — Made with bees, not chemicals.</div>
+      <div>NYC · São Paulo</div>
+    </div>
+  </div>
+</footer>
+
+<div class="tweaks" id="tweaks">
+  <h5>Tweaks</h5>
+  <div class="tw-row">
+    <label>Palette</label>
+    <div class="swatches">
+      <div class="sw sw-a active" data-palette="earth" title="Honey & Earth"></div>
+      <div class="sw sw-b" data-palette="tropical" title="Tropical Modern"></div>
+    </div>
+  </div>
+</div>
+
+<script src="scripts/site.js?v=3"></script>
+<script>window.initTweaks && window.initTweaks();</script>
+
+</body>
+</html>

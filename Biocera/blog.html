@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Journal — biocera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/site.css?v=3">
+<style>
+  .blog-hero {
+    padding: 100px 40px 40px;
+    max-width: 1360px; margin: 0 auto;
+    display: grid; grid-template-columns: 200px 1fr; gap: 60px; align-items: end;
+  }
+  .blog-hero h1 { font-size: clamp(56px, 7vw, 120px); line-height: 0.98; letter-spacing: -0.015em; }
+  .blog-hero h1 em { color: var(--terracotta); }
+
+  .featured {
+    padding: 40px 0 80px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .featured .wrap {
+    max-width: 1360px; margin: 0 auto; padding: 0 40px;
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: center;
+  }
+  .featured .img { aspect-ratio: 5/4; overflow: hidden; }
+  .featured .img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s; }
+  .featured:hover .img img { transform: scale(1.04); }
+  .featured .meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 24px; }
+  .featured h2 { font-size: clamp(36px, 4.5vw, 64px); line-height: 1.05; margin-bottom: 24px; text-wrap: pretty; }
+  .featured h2 em { color: var(--terracotta); font-style: italic; }
+  .featured .ex { font-size: 19px; color: var(--ink-2); line-height: 1.6; margin-bottom: 32px; }
+
+  .archive {
+    padding: 100px 0;
+  }
+  .archive .wrap { max-width: 1360px; margin: 0 auto; padding: 0 40px; }
+  .archive h3 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 40px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+  .post { display: block; color: inherit; }
+  .post .img { aspect-ratio: 4/5; overflow: hidden; margin-bottom: 20px; background: var(--paper-2); }
+  .post .img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s; }
+  .post:hover .img img { transform: scale(1.04); }
+  .post .meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 10px; display: flex; justify-content: space-between; }
+  .post h4 { font-family: var(--serif-display); font-size: 28px; line-height: 1.15; margin-bottom: 8px; }
+  .post h4 em { color: var(--terracotta); font-style: italic; }
+  .post p { color: var(--ink-2); font-size: 15px; }
+
+  @media (max-width: 960px) {
+    .blog-hero { grid-template-columns: 1fr; padding: 60px 24px; }
+    .featured .wrap { grid-template-columns: 1fr; padding: 0 24px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-strip" style="background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; text-align: center; padding: 10px 20px;">The Journal — dispatches from the chair, the salon &amp; the science</div>
+
+<nav class="nav" data-screen-label="Shared nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">b<em>i</em>ocera</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="education.html">Education</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main data-screen-label="05 Blog">
+
+  <section class="blog-hero">
+    <div class="eyebrow">Chapter 06<br>The Journal</div>
+    <h1>Notes on wax, <em>skin</em>, and the craft of the chair.</h1>
+  </section>
+
+  <section class="featured reveal">
+    <div class="wrap">
+      <div class="img">
+        <img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=1600&q=80" alt="">
+      </div>
+      <div>
+        <div class="meta">Issue 01 · April 2026 · Founder's Note</div>
+        <h2>Why we made Biocera <em>warm</em>, not hot.</h2>
+        <p class="ex">A short piece on why temperature is the first decision any wax formula makes — and why the North American standard has been wrong for decades. Most professional waxes are designed to work hot because they have to. Biocera was designed to work warm because it can.</p>
+        <a href="#" class="btn-arrow">Read the piece</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="archive">
+    <div class="wrap">
+      <h3>From the archive</h3>
+      <div class="grid">
+        <a href="#" class="post reveal">
+          <div class="img"><img src="https://images.unsplash.com/photo-1556228720-da4e85bb4b73?w=800&q=80" alt=""></div>
+          <div class="meta"><span>Skin Science</span><span>6 min</span></div>
+          <h4>What your skin actually <em>absorbs</em>.</h4>
+          <p>A practical primer on transdermal absorption and why ingredient lists matter more in hair removal than in almost any other category.</p>
+        </a>
+        <a href="#" class="post reveal">
+          <div class="img"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80" alt=""></div>
+          <div class="meta"><span>Room Culture</span><span>4 min</span></div>
+          <h4>Designing a treatment room for <em>calm</em>.</h4>
+          <p>Lighting, temperature, scent, sound, and the small rituals that turn a generic wax room into a place clients look forward to.</p>
+        </a>
+        <a href="#" class="post reveal">
+          <div class="img"><img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=800&q=80" alt=""></div>
+          <div class="meta"><span>Ingredient Notes</span><span>3 min</span></div>
+          <h4>Manuka oil, <em>properly</em> introduced.</h4>
+          <p>The small, nervy, botanical hero of Bee Smooth Oil — what it is, where it comes from, and why we use it post-wax.</p>
+        </a>
+        <a href="#" class="post reveal">
+          <div class="img"><img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?w=800&q=80" alt=""></div>
+          <div class="meta"><span>The Craft</span><span>5 min</span></div>
+          <h4>Three mistakes most <em>new</em> waxers make.</h4>
+          <p>Overheating the wax. Applying too thick. Pulling too slowly. An honest essay on the fixes, from Rosana.</p>
+        </a>
+        <a href="#" class="post reveal">
+          <div class="img"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80" alt=""></div>
+          <div class="meta"><span>On Brazil</span><span>7 min</span></div>
+          <h4>Why <em>São Paulo</em> waxes differently.</h4>
+          <p>A cultural history of Brazilian waxing — the technique, the temperature, the intimacy, the trust — and what the rest of the world quietly got wrong.</p>
+        </a>
+        <a href="#" class="post reveal">
+          <div class="img"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800&q=80" alt=""></div>
+          <div class="meta"><span>Clean Beauty</span><span>5 min</span></div>
+          <h4>What "chemical free" <em>actually</em> means.</h4>
+          <p>A field-guide to the language of clean beauty, and how to read a wax label in under 30 seconds.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" data-screen-label="Shared footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px">b<em>i</em>ocera</div>
+        <p style="max-width:360px; color: var(--ink-2); margin-top:12px;">100% natural depilatory hard wax for face and body, for professional waxers. Founded in Brazil. Based in Manhattan.</p>
+      </div>
+      <div><h4>Explore</h4><a href="about.html">About</a><a href="products.html">Products</a><a href="education.html">Education</a><a href="blog.html">Journal</a></div>
+      <div><h4>Professionals</h4><a href="contact.html">Become a partner</a><a href="education.html">Training</a><a href="contact.html">Wholesale</a></div>
+      <div><h4>Connect</h4><a href="contact.html">hello@biocera.co</a><a href="#">Instagram</a><a href="#">Newsletter</a></div>
+    </div>
+    <div class="footer-bottom"><div>© 2026 Biocera — Made with bees, not chemicals.</div><div>NYC · São Paulo</div></div>
+  </div>
+</footer>
+
+<div class="tweaks" id="tweaks">
+  <h5>Tweaks</h5>
+  <div class="tw-row"><label>Palette</label>
+    <div class="swatches"><div class="sw sw-a active" data-palette="earth"></div><div class="sw sw-b" data-palette="tropical"></div></div>
+  </div>
+</div>
+<script src="scripts/site.js?v=3"></script>
+<script>window.initTweaks && window.initTweaks();</script>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About — biocera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/site.css?v=3">
+<style>
+  .about-hero {
+    padding: 120px 0 80px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 80px;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .about-hero .eyebrow { padding-top: 10px; }
+  .about-hero h1 {
+    font-size: clamp(56px, 8vw, 136px);
+    line-height: 0.98;
+    letter-spacing: -0.015em;
+    max-width: 1100px;
+    text-wrap: pretty;
+  }
+  .about-hero h1 em { color: var(--terracotta); }
+
+  .marquee {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 22px 0;
+    overflow: hidden;
+    font-family: var(--serif-display);
+    font-size: clamp(32px, 5vw, 72px);
+    font-style: italic;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+  }
+  .marquee .track {
+    display: inline-block;
+    animation: scroll 40s linear infinite;
+    padding-left: 100%;
+  }
+  .marquee span { color: var(--terracotta); margin: 0 36px; }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+
+  /* Rosana story */
+  .story {
+    padding: 140px 0;
+  }
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 40px;
+    align-items: start;
+  }
+  .story-grid .col-image .photo {
+    aspect-ratio: 4/5;
+    overflow: hidden;
+  }
+  .story-grid .col-image .caption {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .story .eyebrow { display: block; margin-bottom: 20px; }
+  .story h2 {
+    font-size: clamp(36px, 4.5vw, 60px);
+    line-height: 1.08;
+    margin-bottom: 32px;
+    font-style: italic;
+  }
+  .story h2 em { color: var(--terracotta); font-style: normal; }
+  .story p {
+    font-size: 18px;
+    color: var(--ink-2);
+    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+  .story p.first::first-letter {
+    font-family: var(--serif-display);
+    font-size: 72px;
+    line-height: 0.9;
+    float: left;
+    margin: 6px 12px 0 0;
+    color: var(--terracotta);
+  }
+
+  /* timeline */
+  .timeline {
+    border-top: 1px solid var(--rule);
+    padding: 120px 0;
+    background: var(--paper-2);
+  }
+  .timeline .wrap {
+    max-width: 1200px; margin: 0 auto; padding: 0 40px;
+  }
+  .timeline h2 {
+    font-size: clamp(36px, 4vw, 56px);
+    margin-bottom: 60px;
+    max-width: 760px;
+  }
+  .timeline h2 em { color: var(--terracotta); font-style: italic; }
+  .tl-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+  .tl {
+    border-top: 1px solid var(--ink);
+    padding-top: 24px;
+  }
+  .tl .year {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--terracotta);
+    margin-bottom: 16px;
+  }
+  .tl h4 {
+    font-family: var(--serif-display);
+    font-size: 26px;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .tl p { font-size: 15px; color: var(--ink-2); }
+
+  /* philosophy grid */
+  .philo {
+    padding: 140px 0;
+  }
+  .philo .wrap { max-width: 1360px; margin: 0 auto; padding: 0 40px; }
+  .philo-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 60px; }
+  .philo-head h2 { max-width: 680px; font-size: clamp(40px, 4.5vw, 64px); }
+  .philo-head h2 em { color: var(--terracotta); font-style: italic; }
+  .philo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+  .pillar {
+    border-top: 1px solid var(--ink);
+    padding-top: 24px;
+  }
+  .pillar .num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--terracotta);
+    margin-bottom: 22px;
+  }
+  .pillar h4 {
+    font-family: var(--serif-display);
+    font-size: 32px;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .pillar h4 em { color: var(--terracotta); font-style: italic; }
+  .pillar p { color: var(--ink-2); }
+
+  /* formula callout */
+  .formula {
+    border-top: 1px solid var(--rule);
+    background: var(--ink);
+    color: var(--paper);
+    padding: 140px 0;
+  }
+  .formula .wrap {
+    max-width: 1200px; margin: 0 auto; padding: 0 40px;
+  }
+  .formula .eyebrow { color: var(--honey); display: block; margin-bottom: 36px; }
+  .formula h2 {
+    font-size: clamp(40px, 5.5vw, 80px);
+    line-height: 1.05;
+    margin-bottom: 60px;
+    max-width: 1000px;
+    text-wrap: pretty;
+  }
+  .formula h2 em { color: var(--honey); font-style: italic; }
+  .formula-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 40px; }
+  .formula .item {
+    border-top: 1px solid rgba(244,239,230,0.2);
+    padding-top: 20px;
+  }
+  .formula .item .k {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--honey);
+    margin-bottom: 10px;
+  }
+  .formula .item h5 {
+    font-family: var(--serif-display);
+    font-size: 22px;
+    line-height: 1.2;
+    margin: 0 0 10px;
+    font-weight: 500;
+  }
+  .formula .item p { font-size: 14px; opacity: 0.75; }
+
+  @media (max-width: 960px) {
+    .about-hero { grid-template-columns: 1fr; padding: 80px 24px; gap: 24px; }
+    .story-grid { grid-template-columns: 1fr; padding: 0 24px; }
+    .tl-grid { grid-template-columns: 1fr 1fr; }
+    .philo-grid { grid-template-columns: 1fr; }
+    .formula-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-strip" style="background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; text-align: center; padding: 10px 20px;">Founded in Brazil — Based in Manhattan — For professional waxers</div>
+
+<nav class="nav" data-screen-label="Shared nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">b<em>i</em>ocera</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="products.html">Products</a>
+      <a href="education.html">Education</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main data-screen-label="02 About">
+
+  <section class="about-hero">
+    <div class="eyebrow">Chapter 01<br>Our story</div>
+    <h1>Forty years of formula — from a salon in São Paulo to every <em>serious</em> waxer in the world.</h1>
+  </section>
+
+  <div class="marquee">
+    <div class="track">
+      Founded in Brazil<span>·</span>Based in Manhattan<span>·</span>100% natural<span>·</span>Chemical free<span>·</span>Paraben free<span>·</span>Gluten free<span>·</span>For the professional<span>·</span>
+      Founded in Brazil<span>·</span>Based in Manhattan<span>·</span>100% natural<span>·</span>Chemical free<span>·</span>Paraben free<span>·</span>Gluten free<span>·</span>For the professional<span>·</span>
+    </div>
+  </div>
+
+  <section class="story">
+    <div class="story-grid">
+      <div class="col-image reveal">
+        <div class="photo">
+          <img src="https://images.unsplash.com/photo-1521146764736-56c929d59c83?w=1100&q=80" alt="A workspace with natural textures">
+        </div>
+        <div class="caption"><span>Fig. 01 — São Paulo, 1986</span><span>Archive</span></div>
+      </div>
+      <div class="col-text reveal">
+        <span class="eyebrow">Founder's Note</span>
+        <h2>Rosana <em>Michail</em>. A salon, a mother, a formula.</h2>
+        <p class="first">Rosana grew up in São Paulo, Brazil, where her mother owned a large salon and formulated her own natural depilatory wax. Rosana was trained by her mother in waxing — then went on to study chemistry, to take the family formulas to the next level.</p>
+        <p>Once in the United States, Rosana quickly realized there was a huge opportunity to give clients a better — 100% natural — waxing experience than the one they'd been used to in North America.</p>
+        <p>After getting her esthetician license, she opened her first waxing spa in Manhattan. Over ten years, dozens of salons and professional waxers asked to buy her wax. She always said no; she only made enough for her own rooms.</p>
+        <p>Now, Biocera is how we bring that 40-year-old formula to every serious waxer, everywhere.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline">
+    <div class="wrap">
+      <span class="eyebrow" style="display:block; margin-bottom: 18px;">Chapter 02 — The Timeline</span>
+      <h2 class="reveal">Built <em>slowly</em>, on purpose.</h2>
+      <div class="tl-grid">
+        <div class="tl reveal">
+          <div class="year">1986 / SÃO PAULO</div>
+          <h4>A mother's formula</h4>
+          <p>Rosana's mother opens her salon and hand-formulates a natural depilatory wax — no parabens, no artificial color.</p>
+        </div>
+        <div class="tl reveal">
+          <div class="year">1998 / SÃO PAULO</div>
+          <h4>Chemistry, then chair</h4>
+          <p>Rosana trains in the family salon and studies chemistry — refining the formula with organic essential oils.</p>
+        </div>
+        <div class="tl reveal">
+          <div class="year">2013 / MANHATTAN</div>
+          <h4>The first spa</h4>
+          <p>The first Biocera waxing spa opens in Manhattan. Clients and pros ask, repeatedly, where to buy the wax.</p>
+        </div>
+        <div class="tl reveal">
+          <div class="year">2026 / WORLDWIDE</div>
+          <h4>For every waxer</h4>
+          <p>Forty years in, the wax is available to independent salons and professionals around the world.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="philo">
+    <div class="wrap">
+      <div class="philo-head reveal">
+        <div>
+          <span class="eyebrow" style="display:block; margin-bottom: 18px;">Chapter 03 — The Pillars</span>
+          <h2>The <em>three things</em> everything else has to serve.</h2>
+        </div>
+      </div>
+      <div class="philo-grid">
+        <div class="pillar reveal">
+          <div class="num">Pillar / 01</div>
+          <h4>Better for the <em>client</em>.</h4>
+          <p>Warm, not hot. Adheres only to hair. Conditions with beeswax and natural oils. The wax itself becomes part of the treatment.</p>
+        </div>
+        <div class="pillar reveal">
+          <div class="num">Pillar / 02</div>
+          <h4>Better for the <em>waxer</em>.</h4>
+          <p>Non-toxic, chemical-free products you can use all day without breathing a chemical cloud or staining your hands.</p>
+        </div>
+        <div class="pillar reveal">
+          <div class="num">Pillar / 03</div>
+          <h4>Better for the <em>earth</em>.</h4>
+          <p>Responsibly sourced botanicals, no artificial fragrance or dye, packaging that respects the practice of clean beauty.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="formula">
+    <div class="wrap">
+      <span class="eyebrow">Chapter 04 — The Formula</span>
+      <h2 class="reveal">A <em>stripless</em> Brazilian wax, perfected over four decades.</h2>
+      <p style="max-width: 820px; font-size: 19px; line-height: 1.65; opacity: 0.85;">Chemical free, plant based, with no artificial colors or fragrance. Paraben free. Gluten free. Made only with the highest quality natural ingredients — including organic essential oils. The wax goes on warm, not hot, eliminating the chance of burning sensitive skin and opening the hair root for easier removal.</p>
+      <div class="formula-grid">
+        <div class="item">
+          <div class="k">01 — Beeswax</div>
+          <h5>Conditions the skin</h5>
+          <p>Leaves the skin smooth and nourished as the wax is pulled away — a finishing step, built in.</p>
+        </div>
+        <div class="item">
+          <div class="k">02 — Organic essential oils</div>
+          <h5>Calm and scent</h5>
+          <p>A natural, honeyed aroma — never the harsh chemical smell of synthetic wax.</p>
+        </div>
+        <div class="item">
+          <div class="k">03 — Plant-based resins</div>
+          <h5>Grip only the hair</h5>
+          <p>Adheres to hair, not to the top layer of skin, so it can be applied multiple times without irritation.</p>
+        </div>
+        <div class="item">
+          <div class="k">04 — What's not in it</div>
+          <h5>Zero compromises</h5>
+          <p>No parabens, no gluten, no artificial color, no artificial fragrance. Nothing loaded with cheap chemistry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" data-screen-label="Shared footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px">b<em>i</em>ocera</div>
+        <p style="max-width:360px; color: var(--ink-2); margin-top:12px;">100% natural depilatory hard wax for face and body, for professional waxers. Founded in Brazil. Based in Manhattan.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="education.html">Education</a>
+        <a href="blog.html">Journal</a>
+      </div>
+      <div>
+        <h4>Professionals</h4>
+        <a href="contact.html">Become a partner</a>
+        <a href="education.html">Training</a>
+        <a href="contact.html">Wholesale</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="contact.html">hello@biocera.co</a>
+        <a href="#">Instagram</a>
+        <a href="#">Newsletter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Biocera — Made with bees, not chemicals.</div>
+      <div>NYC · São Paulo</div>
+    </div>
+  </div>
+</footer>
+
+<div class="tweaks" id="tweaks">
+  <h5>Tweaks</h5>
+  <div class="tw-row">
+    <label>Palette</label>
+    <div class="swatches">
+      <div class="sw sw-a active" data-palette="earth" title="Honey & Earth"></div>
+      <div class="sw sw-b" data-palette="tropical" title="Tropical Modern"></div>
+    </div>
+  </div>
+</div>
+
+<script src="scripts/site.js?v=3"></script>
+<script>window.initTweaks && window.initTweaks();</script>
+
+</body>
+</html>

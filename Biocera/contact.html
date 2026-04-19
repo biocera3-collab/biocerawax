@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact — biocera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/site.css?v=3">
+<style>
+  .c-hero {
+    padding: 100px 40px 60px;
+    max-width: 1360px; margin: 0 auto;
+    display: grid; grid-template-columns: 200px 1fr; gap: 60px; align-items: end;
+  }
+  .c-hero h1 { font-size: clamp(56px, 7vw, 120px); line-height: 0.98; letter-spacing: -0.015em; }
+  .c-hero h1 em { color: var(--terracotta); }
+
+  .contact-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1360px; margin: 0 auto; padding: 40px 40px 120px;
+    gap: 80px;
+    align-items: start;
+  }
+  .intro-card .eyebrow { display: block; margin-bottom: 18px; }
+  .intro-card h2 { font-size: clamp(30px, 2.5vw, 40px); line-height: 1.15; margin-bottom: 28px; font-style: italic; }
+  .intro-card h2 em { color: var(--terracotta); font-style: normal; }
+  .intro-card p { font-size: 17px; color: var(--ink-2); line-height: 1.7; margin-bottom: 18px; }
+
+  .contact-info { margin-top: 40px; border-top: 1px solid var(--rule); padding-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .info .lbl { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 8px; }
+  .info .val { font-family: var(--serif-display); font-size: 22px; font-style: italic; }
+  .info .val em { color: var(--terracotta); }
+
+  .form {
+    background: var(--paper-2);
+    padding: 56px;
+    border-top: 2px solid var(--ink);
+  }
+  .form h3 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; margin: 0 0 32px; color: var(--ink-2); }
+  .field { margin-bottom: 28px; border-bottom: 1px solid var(--rule); padding-bottom: 14px; }
+  .field label { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 10px; }
+  .field input, .field textarea, .field select {
+    width: 100%; border: 0; background: transparent;
+    font-family: var(--serif-text); font-size: 20px; color: var(--ink);
+    outline: none; padding: 4px 0;
+  }
+  .field input::placeholder, .field textarea::placeholder { color: var(--ink-2); opacity: 0.5; font-style: italic; }
+  .field textarea { resize: vertical; min-height: 90px; }
+  .field.focused { border-color: var(--terracotta); }
+  .form .actions { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; }
+  .form .note { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-2); }
+
+  .sent {
+    display: none;
+    padding: 40px; text-align: center;
+    font-family: var(--serif-display);
+    font-size: 28px; font-style: italic;
+  }
+  .sent.show { display: block; }
+  .sent em { color: var(--terracotta); font-style: normal; }
+
+  .fav {
+    border-top: 1px solid var(--rule);
+    padding: 100px 0;
+    background: var(--ink); color: var(--paper);
+    text-align: center;
+  }
+  .fav .eyebrow { color: var(--honey); display: block; margin-bottom: 24px; }
+  .fav h2 { color: var(--paper); font-size: clamp(40px, 5vw, 72px); max-width: 1000px; margin: 0 auto 32px; }
+  .fav h2 em { color: var(--honey); font-style: italic; }
+  .fav p { max-width: 600px; margin: 0 auto; opacity: 0.8; }
+
+  @media (max-width: 960px) {
+    .c-hero { grid-template-columns: 1fr; padding: 60px 24px; }
+    .contact-wrap { grid-template-columns: 1fr; padding: 40px 24px; gap: 40px; }
+    .form { padding: 32px 24px; }
+    .contact-info { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-strip" style="background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; text-align: center; padding: 10px 20px;">We love to hear from our fans &amp; our customers</div>
+
+<nav class="nav" data-screen-label="Shared nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">b<em>i</em>ocera</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="education.html">Education</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main data-screen-label="06 Contact">
+
+  <section class="c-hero">
+    <div class="eyebrow">Chapter 07<br>Contact</div>
+    <h1>Say <em>hello</em> — we love to hear from our fans &amp; customers.</h1>
+  </section>
+
+  <section class="contact-wrap">
+    <div class="intro-card">
+      <span class="eyebrow">Before you write</span>
+      <h2>Thank you for your <em>interest</em> in Biocera.</h2>
+      <p>If you have any questions or comments that require additional attention, please contact us below — we read everything, and we write back.</p>
+      <p>Whether you're a curious client, an independent waxer wanting to try the formula, or a salon looking to carry Biocera, tell us a bit about yourself and we'll reach out.</p>
+      <div class="contact-info">
+        <div class="info"><div class="lbl">Email</div><div class="val">hello@<em>biocera</em>.co</div></div>
+        <div class="info"><div class="lbl">Wholesale</div><div class="val"><em>pros</em>@biocera.co</div></div>
+        <div class="info"><div class="lbl">Based in</div><div class="val">Manhattan, NY</div></div>
+        <div class="info"><div class="lbl">Rooted in</div><div class="val">São Paulo, BR</div></div>
+      </div>
+    </div>
+
+    <form class="form" id="contact-form" onsubmit="return false;">
+      <h3>Write to us · 004</h3>
+      <div class="sent" id="sent">Thank you — your note has <em>arrived</em>.</div>
+      <div id="fields">
+        <div class="field"><label for="name">Your name</label><input id="name" type="text" placeholder="e.g. Ana Lima" autocomplete="name"></div>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@salon.com" autocomplete="email"></div>
+        <div class="field"><label for="role">You are a…</label>
+          <select id="role">
+            <option value="">— choose one —</option>
+            <option>A curious client</option>
+            <option>An independent waxer</option>
+            <option>A salon / spa owner</option>
+            <option>A distributor</option>
+            <option>A press / media contact</option>
+            <option>Just saying hi</option>
+          </select>
+        </div>
+        <div class="field"><label for="subject">Subject</label><input id="subject" type="text" placeholder="What's this about?"></div>
+        <div class="field"><label for="msg">Message</label><textarea id="msg" placeholder="Tell us a little about yourself — we write back."></textarea></div>
+        <div class="actions">
+          <div class="note">We reply within 2 business days</div>
+          <button class="btn btn-solid" type="button" id="send-btn">Send note</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <section class="fav">
+    <span class="eyebrow">Heard &amp; appreciated</span>
+    <h2>"We love to hear from our <em>fans</em> and our customers."</h2>
+    <p>Every message goes to the small team at Biocera. No bots, no tiers, no ticket systems — just us, at a desk in Manhattan, reading.</p>
+  </section>
+
+</main>
+
+<footer class="footer" data-screen-label="Shared footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px">b<em>i</em>ocera</div>
+        <p style="max-width:360px; color: var(--ink-2); margin-top:12px;">100% natural depilatory hard wax for face and body, for professional waxers. Founded in Brazil. Based in Manhattan.</p>
+      </div>
+      <div><h4>Explore</h4><a href="about.html">About</a><a href="products.html">Products</a><a href="education.html">Education</a><a href="blog.html">Journal</a></div>
+      <div><h4>Professionals</h4><a href="contact.html">Become a partner</a><a href="education.html">Training</a><a href="contact.html">Wholesale</a></div>
+      <div><h4>Connect</h4><a href="contact.html">hello@biocera.co</a><a href="#">Instagram</a><a href="#">Newsletter</a></div>
+    </div>
+    <div class="footer-bottom"><div>© 2026 Biocera — Made with bees, not chemicals.</div><div>NYC · São Paulo</div></div>
+  </div>
+</footer>
+
+<div class="tweaks" id="tweaks">
+  <h5>Tweaks</h5>
+  <div class="tw-row"><label>Palette</label>
+    <div class="swatches"><div class="sw sw-a active" data-palette="earth"></div><div class="sw sw-b" data-palette="tropical"></div></div>
+  </div>
+</div>
+
+<script src="scripts/site.js?v=3"></script>
+<script>
+  // field focus styling
+  document.querySelectorAll('.field input, .field textarea, .field select').forEach(el => {
+    el.addEventListener('focus', () => el.parentElement.classList.add('focused'));
+    el.addEventListener('blur', () => el.parentElement.classList.remove('focused'));
+  });
+  // fake submit
+  document.getElementById('send-btn').addEventListener('click', () => {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const msg = document.getElementById('msg').value.trim();
+    if (!name || !email || !msg) {
+      alert('Please fill in your name, email and message.');
+      return;
+    }
+    document.getElementById('fields').style.display = 'none';
+    document.getElementById('sent').classList.add('show');
+  });
+  window.initTweaks && window.initTweaks();
+</script>
+</body>
+</html>
