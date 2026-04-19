@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Lora:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/site.css?v=5">
+<link rel="stylesheet" href="styles/site.css?v=4">
 </head>
 <body>
 
@@ -34,8 +34,8 @@
       <div class="slide on" style="background-image:url('images/top.png')"></div>
       <div class="slide" style="background-image:url('images/product.png')"></div>
       <div class="slide" style="background-image:url('images/bottom.png')"></div>
-      <div class="tag"><span class="bar"></span><span id="tag-txt">Honey · Warm</span></div>
-      <div class="counter"><span class="num" id="c-num">01</span><span>/ 03</span><span id="c-cap" style="margin-left:18px">Scene — Honey on skin</span></div>
+      <div class="tag"><span class="bar"></span><span id="tag-txt">Light · Studio</span></div>
+      <div class="counter"><span class="num" id="c-num">01</span><span>/ 03</span><span id="c-cap" style="margin-left:18px">Scene 01 — In the room</span></div>
     </div>
     <div class="hero-body">
       <span class="eyebrow reveal" data-once="true">Est. Brazil · Made in Manhattan</span>
@@ -237,8 +237,8 @@
   <div class="tw-row">
     <label>Palette</label>
     <div class="swatches">
-      <div class="sw sw-a active" data-palette="earth" title="Honey & Earth"></div>
-      <div class="sw sw-b" data-palette="tropical" title="Tropical Modern"></div>
+      <div class="sw sw-a active" data-palette="earth" title="Noir &amp; gold"></div>
+      <div class="sw sw-b" data-palette="tropical" title="Cool platinum"></div>
     </div>
   </div>
   <div class="tw-row">
@@ -257,7 +257,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 }/*EDITMODE-END*/;
 </script>
 
-<script src="scripts/site.js?v=5"></script>
+<script src="scripts/site.js?v=4"></script>
 <script>
 // ---- Hero slideshow
 (function(){
@@ -331,9 +331,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       heroMedia.style.inset = '0';
       heroBody.style.position = 'relative';
       heroBody.style.zIndex = '2';
-      heroBody.style.color = '#f5efe0';
-      heroBody.style.backgroundImage = 'linear-gradient(to right, rgba(26,21,14,0.7), rgba(26,21,14,0.1))';
-      document.querySelectorAll('.hero-body .lede').forEach(e => e.style.color = 'rgba(245,239,224,0.85)');
+      heroBody.style.color = '#e4e4ec';
+      heroBody.style.backgroundImage = 'linear-gradient(to right, rgba(0,0,0,0.78), rgba(0,0,0,0.12))';
+      document.querySelectorAll('.hero-body .lede').forEach(e => e.style.color = 'rgba(228,228,236,0.82)');
     } else {
       hero.style.gridTemplateColumns = '';
       hero.style.minHeight = '';

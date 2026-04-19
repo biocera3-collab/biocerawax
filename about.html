@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/site.css?v=5">
+<link rel="stylesheet" href="styles/site.css?v=4">
 <style>
   .about-hero {
     padding: 120px 0 80px;
@@ -170,8 +170,8 @@
   /* formula callout */
   .formula {
     border-top: 1px solid var(--rule);
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--void);
+    color: var(--ink);
     padding: 140px 0;
   }
   .formula .wrap {
@@ -188,7 +188,7 @@
   .formula h2 em { color: var(--honey); font-style: italic; }
   .formula-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 40px; }
   .formula .item {
-    border-top: 1px solid rgba(244,239,230,0.2);
+    border-top: 1px solid var(--chrome-line);
     padding-top: 20px;
   }
   .formula .item .k {
@@ -208,17 +208,44 @@
   .formula .item p { font-size: 14px; opacity: 0.75; }
 
   @media (max-width: 960px) {
-    .about-hero { grid-template-columns: 1fr; padding: 80px 24px; gap: 24px; }
-    .story-grid { grid-template-columns: 1fr; padding: 0 24px; }
+    .about-hero { grid-template-columns: 1fr; padding: 72px 24px 56px; gap: 20px; }
+    .about-hero h1 { font-size: clamp(40px, 9vw, 80px); }
+    .story-grid { grid-template-columns: 1fr; padding: 0 24px; gap: 40px; }
+    .story { padding: 100px 0; }
+    .timeline { padding: 88px 0; }
+    .philo { padding: 100px 0; }
+    .formula { padding: 100px 0; }
     .tl-grid { grid-template-columns: 1fr 1fr; }
     .philo-grid { grid-template-columns: 1fr; }
     .formula-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .about-hero { padding: 56px 20px 48px; gap: 16px; }
+    .about-hero h1 { font-size: clamp(34px, 10vw, 56px); }
+    .marquee { font-size: clamp(20px, 5.5vw, 36px); }
+    .marquee span { margin: 0 18px; }
+    .story { padding: 72px 0; }
+    .story-grid { padding: 0 20px; gap: 32px; }
+    .story p.first::first-letter { font-size: 52px; margin: 4px 10px 0 0; }
+    .story h2 { font-size: clamp(28px, 7vw, 44px); margin-bottom: 22px; }
+    .story p { font-size: 16px; }
+    .timeline { padding: 64px 0; }
+    .timeline .wrap { padding: 0 20px; }
+    .timeline h2 { margin-bottom: 40px; }
+    .tl-grid { grid-template-columns: 1fr; gap: 28px; }
+    .philo { padding: 72px 0; }
+    .philo .wrap { padding: 0 20px; }
+    .philo-head { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 40px; }
+    .formula { padding: 72px 0; }
+    .formula .wrap { padding: 0 20px; }
+    .formula h2 { margin-bottom: 40px; }
+    .formula-grid { grid-template-columns: 1fr; gap: 28px; }
   }
 </style>
 </head>
 <body>
 
-<div class="top-strip" style="background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; text-align: center; padding: 10px 20px;">Founded in Brazil — Based in Manhattan — For professional waxers</div>
+<div class="top-strip" style="background: var(--void); color: var(--ink); font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; text-align: center; padding: 10px 20px;">Founded in Brazil — Based in Manhattan — For professional waxers</div>
 
 <nav class="nav" data-screen-label="Shared nav">
   <div class="nav-inner">
@@ -379,8 +406,8 @@
       <div>
         <h4>Connect</h4>
         <a href="contact.html">hello@biocera.co</a>
-        <a href="https://instagram.com" rel="noopener noreferrer">Instagram</a>
-        <a href="contact.html">Newsletter</a>
+        <a href="#">Instagram</a>
+        <a href="#">Newsletter</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -395,13 +422,13 @@
   <div class="tw-row">
     <label>Palette</label>
     <div class="swatches">
-      <div class="sw sw-a active" data-palette="earth" title="Honey & Earth"></div>
-      <div class="sw sw-b" data-palette="tropical" title="Tropical Modern"></div>
+      <div class="sw sw-a active" data-palette="earth" title="Noir &amp; gold"></div>
+      <div class="sw sw-b" data-palette="tropical" title="Cool platinum"></div>
     </div>
   </div>
 </div>
 
-<script src="scripts/site.js?v=5"></script>
+<script src="scripts/site.js?v=4"></script>
 <script>window.initTweaks && window.initTweaks();</script>
 
 </body>

@@ -42,25 +42,25 @@
   .vid .play {
     position: absolute; inset: 0;
     display: flex; align-items: center; justify-content: center;
-    color: var(--paper);
+    color: var(--ink);
   }
   .vid .play .dot {
     width: 80px; height: 80px; border-radius: 50%;
-    border: 1.5px solid var(--paper);
+    border: 1.5px solid var(--chrome-line);
     display: grid; place-items: center;
     font-family: var(--serif-display); font-style: italic;
     font-size: 16px;
     backdrop-filter: blur(4px);
-    background: rgba(32, 26, 19, 0.2);
+    background: rgba(0, 0, 0, 0.35);
     transition: background 0.25s;
   }
-  .vid:hover .play .dot { background: rgba(32, 26, 19, 0.5); }
+  .vid:hover .play .dot { background: rgba(0, 0, 0, 0.55); }
   .vid .meta { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 10px; }
   .vid h3 { font-size: 28px; line-height: 1.15; font-style: italic; }
   .vid h3 em { color: var(--terracotta); font-style: normal; }
   .edu-more { margin-top: 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; }
   .edu-more a { color: var(--terracotta); }
-  .edu-more a:hover { color: var(--ink); }
+  .edu-more a:hover { color: var(--honey); }
 
   .tips-sec {
     border-top: 1px solid var(--rule);
@@ -71,7 +71,7 @@
   .tips-sec h2 { font-size: clamp(40px, 4.5vw, 64px); margin-bottom: 60px; max-width: 720px; }
   .tips-sec h2 em { color: var(--terracotta); font-style: italic; }
   .tips { display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px 80px; }
-  .tip { border-top: 1px solid var(--ink); padding-top: 24px; }
+  .tip { border-top: 1px solid var(--rule); padding-top: 24px; }
   .tip .num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; color: var(--terracotta); margin-bottom: 16px; }
   .tip h4 { font-family: var(--serif-display); font-size: 30px; font-style: italic; margin-bottom: 10px; line-height: 1.2; }
   .tip p { color: var(--ink-2); }
@@ -102,7 +102,7 @@
 </head>
 <body>
 
-<div class="top-strip" style="background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; text-align: center; padding: 10px 20px;">For trained professionals — Learn the Biocera method</div>
+<div class="top-strip" style="background: var(--void); color: var(--ink); font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; text-align: center; padding: 10px 20px;">For trained professionals — Learn the Biocera method</div>
 
 <nav class="nav" data-screen-label="Shared nav">
   <div class="nav-inner">
@@ -226,7 +226,7 @@
       </div>
       <div><h4>Explore</h4><a href="about.html">About</a><a href="products.html">Products</a><a href="education.html">Education</a><a href="blog.html">Journal</a></div>
       <div><h4>Professionals</h4><a href="contact.html">Become a partner</a><a href="education.html">Training</a><a href="contact.html">Wholesale</a></div>
-      <div><h4>Connect</h4><a href="contact.html">hello@biocera.co</a><a href="https://instagram.com" rel="noopener noreferrer">Instagram</a><a href="contact.html">Newsletter</a></div>
+      <div><h4>Connect</h4><a href="contact.html">hello@biocera.co</a><a href="#">Instagram</a><a href="#">Newsletter</a></div>
     </div>
     <div class="footer-bottom"><div>© 2026 Biocera — Made with bees, not chemicals.</div><div>NYC · São Paulo</div></div>
   </div>
