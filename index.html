@@ -28,9 +28,9 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-media" id="media">
-      <div class="slide on" style="background-image:url('https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=1800&q=80')"></div>
-      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1800&q=80')"></div>
-      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=1800&q=80')"></div>
+      <div class="slide on" style="background-image:url('images/top.png')"></div>
+      <div class="slide" style="background-image:url('images/product.png')"></div>
+      <div class="slide" style="background-image:url('images/bottom.png')"></div>
       <div class="tag"><span class="bar"></span><span id="tag-txt">Honey · Warm</span></div>
       <div class="counter"><span class="num" id="c-num">01</span><span>/ 03</span><span id="c-cap" style="margin-left:18px">Scene — Honey on skin</span></div>
     </div>
@@ -141,7 +141,7 @@
 
     <div class="p-grid">
       <a href="products.html#signature" class="pc big cursor-grow reveal">
-        <div class="img" data-go="Enter →"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=1600&q=80" alt=""></div>
+        <div class="img" data-go="Enter →"><img src="images/product.png" alt="Biocera stripless Brazilian hard wax"></div>
         <div class="num"><span>N° 01</span><span>The Signature</span></div>
         <h3>Stripless <em>Brazilian</em> Hard Wax</h3>
         <p>Quick, high-performance, less painful. The perfect all-purpose wax — for face and body.</p>
@@ -153,7 +153,7 @@
         <p>Apricot and manuka oils — cleanse, condition, calm redness, deter bacteria.</p>
       </a>
       <a href="products.html#warmer" class="pc cursor-grow reveal">
-        <div class="img" data-go="Enter →"><img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?w=1200&q=80" alt=""></div>
+        <div class="img" data-go="Enter →"><img src="images/bottom.png" alt="Biocera pro wax warmer and workspace"></div>
         <div class="num"><span>N° 03</span><span>Hardware</span></div>
         <h3>Pro Wax <em>Warmer</em></h3>
         <p>Ceramic basin, even heat, 5 lbs of wax at the perfect temperature, all day.</p>
@@ -259,9 +259,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 // ---- Hero slideshow
 (function(){
   const tagMap = [
-    { tag: 'Honey · Warm', cap: 'Scene 01 — Honey on skin' },
-    { tag: 'Beeswax · Golden', cap: 'Scene 02 — The raw material' },
-    { tag: 'Manhattan · Studio', cap: 'Scene 03 — The treatment room' }
+    { tag: 'Light · Studio', cap: 'Scene 01 — In the room' },
+    { tag: 'Texture · Wax', cap: 'Scene 02 — The signature formula' },
+    { tag: 'Craft · Detail', cap: 'Scene 03 — Tools of the trade' }
   ];
   const slides = document.querySelectorAll('.hero-media .slide');
   const numEl = document.getElementById('c-num');
