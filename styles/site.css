@@ -466,7 +466,16 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--mono); font-size: 10px;
   letter-spacing: 0.28em; text-transform: uppercase;
   text-align: center; padding: 10px 20px;
-  position: relative; z-index: 3;
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 45; /* above nav so it never overlaps nav text */
+}
+/* On pages with a top-strip, push the nav below it */
+.top-strip + .nav {
+  top: 34px;
+}
+/* Offset main content so it clears both the top-strip (34px) and the nav (~74px) */
+.top-strip ~ main {
+  padding-top: 108px;
 }
 
 /* ---- Responsive */
