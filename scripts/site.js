@@ -62,18 +62,6 @@
   }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.reveal, [data-split], .stagger').forEach(el => io.observe(el));
 
-  // ---- Magnetic cursor on .magnetic
-  document.querySelectorAll('.magnetic').forEach(el => {
-    const strength = parseFloat(el.dataset.magnet) || 0.35;
-    el.addEventListener('mousemove', (e) => {
-      const r = el.getBoundingClientRect();
-      const x = e.clientX - (r.left + r.width/2);
-      const y = e.clientY - (r.top + r.height/2);
-      el.style.transform = `translate(${x*strength}px, ${y*strength}px)`;
-    });
-    el.addEventListener('mouseleave', () => { el.style.transform = ''; });
-  });
-
   // ---- Scroll progress + scroll-linked custom props
   let scrollY = 0, ticking = false;
   function onScroll(){
@@ -101,28 +89,6 @@
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   update();
-
-  // ---- Custom cursor (desktop only)
-  if (matchMedia('(hover:hover)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const c = document.createElement('div');
-    c.className = 'b-cursor';
-    c.innerHTML = '<span class="dot"></span><span class="ring"></span>';
-    document.body.appendChild(c);
-    let tx=0, ty=0, cx=0, cy=0, rx=0, ry=0;
-    window.addEventListener('mousemove', (e) => { tx=e.clientX; ty=e.clientY; });
-    function raf(){
-      cx += (tx-cx)*0.35; cy += (ty-cy)*0.35;
-      rx += (tx-rx)*0.12; ry += (ty-ry)*0.12;
-      c.querySelector('.dot').style.transform = `translate(${cx}px, ${cy}px)`;
-      c.querySelector('.ring').style.transform = `translate(${rx}px, ${ry}px)`;
-      requestAnimationFrame(raf);
-    } raf();
-    // hover state
-    document.querySelectorAll('a, button, .cursor-grow').forEach(el => {
-      el.addEventListener('mouseenter', () => c.classList.add('hover'));
-      el.addEventListener('mouseleave', () => c.classList.remove('hover'));
-    });
-  }
 
   // ---- Tweaks host
   window.initTweaks = function(){
