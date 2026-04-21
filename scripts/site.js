@@ -3,6 +3,60 @@
   const palette = localStorage.getItem('biocera-palette') || 'earth';
   document.documentElement.setAttribute('data-palette', palette === 'earth' ? '' : palette);
 
+  // ---- Page fade-in
+  function pageReady() { document.body.classList.add('page-ready'); }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', pageReady);
+  } else {
+    requestAnimationFrame(pageReady);
+  }
+
+  // ---- Smooth page transitions on internal link clicks
+  document.addEventListener('click', function(e) {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    // Skip: external, anchor-only, mailto, tel, target=_blank, js: links
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') ||
+        href.startsWith('tel:') || href.startsWith('javascript:') ||
+        a.target === '_blank' || /^https?:\/\//.test(href)) return;
+    e.preventDefault();
+    document.body.classList.add('page-leaving');
+    setTimeout(function() { window.location.href = href; }, 290);
+  }, true);
+
+  // ---- Back button (auto-injected on every page except home)
+  (function(){
+    const path = window.location.pathname.replace(/\.html$/, '');
+    const isHome = (path === '/' || path === '/index' || path === '');
+    if (isHome) return;
+
+    // Determine smart fallback URL
+    let fallback = '/';
+    if (path.includes('/journal/')) fallback = '/blog';
+    else if (/\/products\/./.test(path)) fallback = '/products';
+
+    const btn = document.createElement('button');
+    btn.className = 'back-btn';
+    btn.setAttribute('aria-label', 'Go back');
+    btn.innerHTML = '<span class="back-arrow">←</span><span class="back-label">Back</span>';
+    btn.addEventListener('click', function() {
+      if (history.length > 1 && document.referrer &&
+          document.referrer.includes(window.location.hostname)) {
+        history.back();
+      } else {
+        document.body.classList.add('page-leaving');
+        setTimeout(function() { window.location.href = fallback; }, 290);
+      }
+    });
+    document.body.appendChild(btn);
+  })();
+
+  // ---- Lazy-load images below the fold
+  document.querySelectorAll('img:not([loading])').forEach(function(img, i) {
+    if (i > 0) img.setAttribute('loading', 'lazy');
+  });
+
   // ---- SplitText: wrap each word in span.word > span.inner so we can translate+rotate
   window.splitText = function(el){
     if (!el || el.dataset.split) return;
