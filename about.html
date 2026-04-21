@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/site.css?v=6">
+<link rel="stylesheet" href="styles/site.css?v=7">
 <style>
   .about-hero {
     padding: 120px 0 80px;
@@ -208,11 +208,34 @@
   .formula .item p { font-size: 14px; opacity: 0.75; }
 
   @media (max-width: 960px) {
-    .about-hero { grid-template-columns: 1fr; padding: 80px 24px; gap: 24px; }
-    .story-grid { grid-template-columns: 1fr; padding: 0 24px; }
-    .tl-grid { grid-template-columns: 1fr 1fr; }
-    .philo-grid { grid-template-columns: 1fr; }
-    .formula-grid { grid-template-columns: 1fr 1fr; }
+    .about-hero { grid-template-columns: 1fr; padding: 48px 20px 28px; gap: 16px; }
+    .story { padding: 52px 0; }
+    .story-grid { grid-template-columns: 1fr; padding: 0 20px; gap: 32px; }
+    .timeline { padding: 52px 0; }
+    .timeline .wrap { padding: 0 20px; }
+    .timeline h2 { margin-bottom: 32px; }
+    .tl-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .philo { padding: 52px 0; }
+    .philo .wrap { padding: 0 20px; }
+    .philo-head { flex-direction: column; gap: 16px; margin-bottom: 32px; }
+    .philo-grid { grid-template-columns: 1fr; gap: 24px; }
+    .formula { padding: 52px 0; }
+    .formula .wrap { padding: 0 20px; }
+    .formula h2 { margin-bottom: 32px; }
+    .formula-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  }
+  @media (max-width: 640px) {
+    .about-hero { padding: 36px 16px 20px; }
+    .story { padding: 40px 0; }
+    .story-grid { padding: 0 16px; }
+    .timeline { padding: 40px 0; }
+    .timeline .wrap { padding: 0 16px; }
+    .tl-grid { grid-template-columns: 1fr; }
+    .philo { padding: 40px 0; }
+    .philo .wrap { padding: 0 16px; }
+    .formula { padding: 40px 0; }
+    .formula .wrap { padding: 0 16px; }
+    .formula-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -399,7 +422,7 @@
   </div>
 </div>
 
-<script src="scripts/site.js?v=6"></script>
+<script src="scripts/site.js?v=7"></script>
 <script>window.initTweaks && window.initTweaks();</script>
 
 </body>

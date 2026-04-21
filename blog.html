@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/site.css?v=6">
+<link rel="stylesheet" href="styles/site.css?v=7">
 <style>
   .blog-hero {
     padding: 100px 40px 40px;
@@ -49,9 +49,20 @@
   .post p { color: var(--ink-2); font-size: 15px; }
 
   @media (max-width: 960px) {
-    .blog-hero { grid-template-columns: 1fr; padding: 60px 24px; }
-    .featured .wrap { grid-template-columns: 1fr; padding: 0 24px; }
-    .grid { grid-template-columns: 1fr; }
+    .blog-hero { grid-template-columns: 1fr; padding: 44px 20px 24px; gap: 16px; }
+    .featured { padding: 28px 0 44px; }
+    .featured .wrap { grid-template-columns: 1fr; padding: 0 20px; gap: 28px; }
+    .archive { padding: 44px 0; }
+    .archive .wrap { padding: 0 20px; }
+    .archive h3 { margin-bottom: 24px; }
+    .grid { grid-template-columns: 1fr; gap: 28px; }
+  }
+  @media (max-width: 640px) {
+    .blog-hero { padding: 36px 16px 20px; }
+    .featured { padding: 20px 0 32px; }
+    .featured .wrap { padding: 0 16px; }
+    .archive { padding: 32px 0; }
+    .archive .wrap { padding: 0 16px; }
   }
 </style>
 </head>
@@ -160,7 +171,7 @@
     <div class="swatches"><div class="sw sw-a active" data-palette="earth"></div><div class="sw sw-b" data-palette="tropical"></div></div>
   </div>
 </div>
-<script src="scripts/site.js?v=6"></script>
+<script src="scripts/site.js?v=7"></script>
 <script>window.initTweaks && window.initTweaks();</script>
 </body>
 </html>

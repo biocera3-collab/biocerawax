@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/site.css?v=6">
+<link rel="stylesheet" href="styles/site.css?v=7">
 <style>
   .c-hero {
     padding: 100px 40px 60px;
@@ -74,10 +74,18 @@
   .fav p { max-width: 600px; margin: 0 auto; opacity: 0.8; }
 
   @media (max-width: 960px) {
-    .c-hero { grid-template-columns: 1fr; padding: 60px 24px; }
-    .contact-wrap { grid-template-columns: 1fr; padding: 40px 24px; gap: 40px; }
-    .form { padding: 32px 24px; }
+    .c-hero { grid-template-columns: 1fr; padding: 44px 20px 24px; gap: 16px; }
+    .contact-wrap { grid-template-columns: 1fr; padding: 28px 20px 48px; gap: 32px; }
+    .form { padding: 28px 20px; }
     .contact-info { grid-template-columns: 1fr; }
+    .fav { padding: 52px 0; }
+    .fav h2 { font-size: clamp(28px, 7vw, 52px); }
+  }
+  @media (max-width: 640px) {
+    .c-hero { padding: 36px 16px 20px; }
+    .contact-wrap { padding: 20px 16px 36px; }
+    .form { padding: 20px 16px; }
+    .fav { padding: 40px 0; }
   }
 </style>
 </head>
@@ -176,7 +184,7 @@
   </div>
 </div>
 
-<script src="scripts/site.js?v=6"></script>
+<script src="scripts/site.js?v=7"></script>
 <script>
   // field focus styling
   document.querySelectorAll('.field input, .field textarea, .field select').forEach(el => {
