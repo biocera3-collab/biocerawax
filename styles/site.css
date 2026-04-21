@@ -131,6 +131,20 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); transform-origin: left; }
 
+/* ---- Animated Home link */
+@keyframes homeIn {
+  from { opacity: 0; letter-spacing: 0.45em; }
+  to   { opacity: 1; letter-spacing: 0.02em; }
+}
+.nav-links a.home-link {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  animation: homeIn 1.4s var(--ease-out) both;
+}
+
 /* Inner wrapper (used on inner pages) — keeps brand + links spaced on one row */
 .nav-inner {
   display: flex;
@@ -342,6 +356,7 @@ a { color: inherit; text-decoration: none; }
 .prods .head h2 em { font-style: italic; color: var(--terracotta); }
 .p-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; padding: 0 48px; max-width: 1560px; margin: 0 auto; }
 .pc { grid-column: span 4; display: block; color: inherit; }
+.pc.only { grid-column: 1 / -1; max-width: 560px; }
 .pc.big { grid-column: span 6; }
 .pc.mid { grid-column: span 6; }
 .pc .img {
