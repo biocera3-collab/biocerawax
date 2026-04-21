@@ -62,6 +62,7 @@
   }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.reveal, [data-split], .stagger').forEach(el => io.observe(el));
 
+
   // ---- Scroll progress + scroll-linked custom props
   let scrollY = 0, ticking = false;
   function onScroll(){
